@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rinomina la risorsa &apos;Homework_1&apos; in &apos;Homework_1_OPL&apos;" description="Rinomina risorsa &apos;Homework_1&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Homework_1" name="Homework_1_OPL" stamp="1544630388424" updateReferences="true"/>
-</session>

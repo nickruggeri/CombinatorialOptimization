@@ -8,9 +8,9 @@ import numpy as np
 class TSPSolver:
     """ TSP solver using genetic algorithms """
 
-    def __init__(self, init_size=100, init_type='random', init_best2opt_frac=0.2, fitness='total_cost',
-                 selection='montecarlo', mating='tuples', mating_n=10, crossover='OX', mutation_prob=0.3,
-                 gen_replacement='keep_best', gen_replacement_par=10,
+    def __init__(self, init_size=1000, init_type='random', init_best2opt_frac=0.2, fitness='total_cost',
+                 selection='montecarlo', mating='tuples', mating_n=100, crossover='OX', mutation_prob=0.3,
+                 gen_replacement='keep_best', gen_replacement_par=100,
                  stopping={'time': math.inf, 'not_improving_gen': 20}):
         """
         INPUTS:
@@ -133,7 +133,10 @@ class TSPSolver:
         # compute fitnesses, sort, update best fitness and best individual
         self.current_fitnesses = [self.fitness_evaluation(individual) for individual in self.current_generation]
 
-        ordered_idx = sorted(range(len(self.current_generation)), reverse=True, key=lambda i: self.current_fitnesses[i])
+        ordered_idx = sorted(
+            range(len(self.current_generation)),
+            key=lambda ind: self.current_fitnesses[ind]
+        )
         self.current_generation = [self.current_generation[i] for i in ordered_idx]
         self.current_fitnesses = [self.current_fitnesses[i] for i in ordered_idx]
 
@@ -204,7 +207,7 @@ class TSPSolver:
         old_new_gen = self.current_generation + next_gen
         old_new_fit = self.current_fitnesses + next_fit
 
-        sorted_idx = sorted(range(len(old_new_fit)), reverse=True, key=lambda i: old_new_fit[i])
+        sorted_idx = sorted(range(len(old_new_fit)), key=lambda i: old_new_fit[i])
         if self.gen_replacement == 'keep_best':
             self.current_generation = [old_new_gen[i] for i in sorted_idx[:self.gen_replacement_par]]
             self.current_fitnesses = [old_new_fit[i] for i in sorted_idx[:self.gen_replacement_par]]
@@ -212,7 +215,8 @@ class TSPSolver:
             self.current_generation = [old_new_gen[i] for i in sorted_idx[:-self.gen_replacement_par]]
             self.current_fitnesses = [old_new_fit[i] for i in sorted_idx[:-self.gen_replacement_par]]
 
-        if self.current_fitnesses[0] > self.best_fitness:
+        if self.current_fitnesses[0] < self.best_fitness:
+            print('best fitness', self.current_fitnesses[0])
             self.best_fitness = self.current_fitnesses[0]
             self.best_individual = self.current_generation[0]
             self._not_improving_gen_count = 0

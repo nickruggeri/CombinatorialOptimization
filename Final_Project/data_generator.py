@@ -74,14 +74,14 @@ def create_dat_file(dist_mat, path):
         file.write('C= [\n')
         for i in range(N):
             file.write('[' +
-                       ' '.join(str(x) for x in dist_mat[i,:]) +
+                       ' '.join(str(x) for x in dist_mat[i, :]) +
                        '],\n'
                        )
         file.write('\n];')
 
 
 '''
-# for saving to Homework1 OPL folder
+# for saving to Homework1_original OPL folder
 def main1():
     blob1 = gaussian_blob(80, 0.02, 3)
     blob2 = grid_blob(100, 1000)
@@ -89,7 +89,7 @@ def main1():
     #plot_blob(blob3)
     
     dist_mat = distance_matrix(blob1)
-    saving_path = 'Homework1/Homework_1_OPL/homework_1.dat'
+    saving_path = 'Homework1_original/Homework_1_OPL/HHomework_1.dat'
     print('saving distance matrix of shape', dist_mat.shape, 'in .dat format at path', saving_path)
     create_dat_file(dist_mat, saving_path)
 

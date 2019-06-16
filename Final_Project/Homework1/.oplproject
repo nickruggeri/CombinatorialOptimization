@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?><project>
 	<version>1.0</version>
+	<description>Homework 1 for Combinatorial Optimization</description>
 	<configs>
-		<config default="true" name="Configuration1" category="opl">
+		<config default="true" name="ConfigurationTry" category="opl">
 			<ref name="Homework_1_model.mod" type="model">
 			</ref>
-			<ref name="homework_1.dat" type="data">
+			<ref name="Homework_1.dat" type="data">
 			</ref>
 		</config>
 	</configs>

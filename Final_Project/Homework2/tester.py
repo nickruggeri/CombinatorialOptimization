@@ -1,5 +1,5 @@
+import math
 import _pickle as pkl
-
 from Homework2.TSPSolver import TSPSolver
 
 
@@ -7,7 +7,7 @@ data_path = 'dist_mat_try.pkl'
 with open(data_path, 'rb') as file:
     dist_mat = pkl.load(file)
 
-solver = TSPSolver()
+solver = TSPSolver(stopping={'time': 60*1, 'not_improving_gen': 1000})
 solver.solve(dist_mat)
 
 print('best solution found', solver.best_individual)

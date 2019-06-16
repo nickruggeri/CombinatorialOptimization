@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e4f293ba-84f3-4c95-b697-c8ef5e200377" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.oplrun.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/ilog.odms.ide.ui/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.core.resources/.projects/ironrods/.location" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.core.resources/.projects/italianFriends/.location" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/history.version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.core.resources/.root/3.tree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.debug.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.editors.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.wst.jsdt.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.debug.core/.launches/Homework_1_OPL Configuration1.launch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.debug.core/.launches/oplrun.launch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.debug.ui/launchConfigurationHistory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/.workspace/2018/12/50/refactorings.history" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/.workspace/2018/12/50/refactorings.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.ltk.ui.refactoring/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.ui.ide/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.ui.workbench/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.wst.jsdt.core/externalLibsTimeStamps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.wst.jsdt.core/libraries/baseBrowserLibrary.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.wst.jsdt.core/libraries/browserWindow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.wst.jsdt.core/libraries/dom5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.wst.jsdt.core/libraries/system.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.wst.jsdt.core/libraries/xhr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.wst.jsdt.core/variablesAndContainers.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.wst.jsdt.ui/OpenTypeHistory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/.plugins/org.eclipse.wst.jsdt.ui/QualifiedTypeNameHistory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/version.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/workspace_oplrun/config.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/workspace_oplrun/org.eclipse.core.runtime/.manager/.fileTableLock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/workspace_oplrun/org.eclipse.core.runtime/.manager/.tmp522691206650624341.instance" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/workspace_oplrun/org.eclipse.equinox.app/.manager/.fileTableLock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/workspace_oplrun/org.eclipse.equinox.app/.manager/.tmp1521509772008309078.instance" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/workspace_oplrun/org.eclipse.equinox.app/.manager/.tmp2858831485113029818.instance" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/workspace_oplrun/org.eclipse.equinox.app/.manager/.tmp4157260632601680099.instance" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/workspace_oplrun/org.eclipse.equinox.app/.manager/.tmp4348876357333943604.instance" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/workspace_oplrun/org.eclipse.osgi/.manager/.fileTable.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/workspace_oplrun/org.eclipse.osgi/.manager/.fileTable.2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/workspace_oplrun/org.eclipse.osgi/.manager/.fileTableLock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/workspace_oplrun/org.eclipse.osgi/28/0/.cp/ilog/odms/ide/opllang/run/initRunComm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/.metadata/workspace_oplrun/org.eclipse.osgi/framework.info.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/Homework_1_OPL/.oplproject" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/Homework_1_OPL/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/Homework_1_OPL/Homework_1_model.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/Homework_1_OPL/homework_1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework2/dist_mat_try.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/data_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Project/data_generator.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1509722482">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="38" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="38" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Final_Project/data_generator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Final_Project/Homework2/tester.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Final_Project/data_generator.py" />
+        <option value="$PROJECT_DIR$/Final_Project/Homework2/tester.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1987" />
+    <option name="y" value="111" />
+    <option name="width" value="476" />
+    <option name="height" value="557" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Combinatorial Optimization" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Combinatorial Optimization" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Combinatorial Optimization" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Combinatorial Optimization" type="462c0819:PsiDirectoryNode" />
+              <item name="Final_Project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Combinatorial Optimization" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Combinatorial Optimization" type="462c0819:PsiDirectoryNode" />
+              <item name="Final_Project" type="462c0819:PsiDirectoryNode" />
+              <item name="Homework1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Combinatorial Optimization" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Combinatorial Optimization" type="462c0819:PsiDirectoryNode" />
+              <item name="Final_Project" type="462c0819:PsiDirectoryNode" />
+              <item name="Homework2" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Documents\GitHub\Combinatorial Optimization\Final_Project\Homework1" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="data_generator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Combinatorial Optimization" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Final_Project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Final_Project/data_generator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.data_generator" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e4f293ba-84f3-4c95-b697-c8ef5e200377" name="Default Changelist" comment="" />
+      <created>1560704898716</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1560704898716</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="-8" width="2576" height="1416" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1678487" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3299532" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3299532" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Final_Project/data_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Final_Project/Homework2/tester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
