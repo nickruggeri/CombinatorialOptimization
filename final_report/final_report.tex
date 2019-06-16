@@ -63,13 +63,15 @@ The following options have been made available in the implementation (see attach
 
 \item \textbf{mating}: two types of mating have been made available. The first is the selection of a given number of pairs of individuals. Every pair gives rise, according to the type of crossover, to one of two individuals as offspring. The second is the selection of a "mating pool": a number of individuals is chosen, and every possible couple undergoes crossover.
 
-\item \textbf{crossover}: many types of crossover are available in literature, two possible reviews are \cite{gupta2011study} and \cite{abdoun2012comparative}. Since we found more clarity in the explanations from \cite{gupta2011study}, we implemented all the crossover types presented there. For clarity, we stick to the notation in reference in the code (which is also pretty intuitive, see the private method \textit{\_crossover} of \textit{TSPSolver})
+\item \textbf{crossover}: many types of crossover are available in literature, two possible reviews are \cite{gupta2011study} and \cite{abdoun2012comparative}. Since we found more clarity in the explanations from \cite{gupta2011study}, we implemented all the crossover types presented there. For clarity, we stick to the notation in reference in the code (which is also pretty intuitive, see the private method \textit{TSPSolver.\_crossover})
 
 \item \textbf{mutation}: with a customized probability, every new individual undergoes mutation. If mutated, every individual is substitued with a random 2-opt neighbour
 
 \item \textbf{generation replacement}: it is possible to keep the best $m$ individuals among the old and new generation, or to remove the worst $m$
 
 \item \textbf{stopping criterion}: there are some stopping criteria available: the maximum number of non improving evolution steps, the time limit, the target score (i.e. stop as soon as the best individual passes a certain score threshold) and the maximum number of generations. These can also be used in combination.
+
+\item \textbf{fitness function}: here we allowed no option but the total cost of the path (including the return to the initial node 0). This point is just to highlight that for efficiency recursive evaluation of the fitness score has been used when possible (i.e for all points from the second generation onward)
 \end{itemize}
 As a final remark, we want to underline that the code has been factorized as much as possible, building appropriate private (or public, even though the difference is almost non-existent in Python) methods for \textit{TSPSolver}. This allows modification/integration of everyone of these customizations with relative ease. The code is also available on \href{https://github.com/NRuggeriProjects/Combinatorial-Optimization}{GitHub}.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.13)  16 JUN 2019 21:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.13)  16 JUN 2019 22:41
 entering extended mode
 **./final_report.tex
 (final_report.tex
@@ -283,16 +283,16 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 
 {C:/Users/ASUS/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4] 
 (final_report.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 101.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
 
 [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 101.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
  (final_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 101.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 101.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
 Package rerunfilecheck Info: File `final_report.out' has not changed.
 (rerunfilecheck)             Checksum: 5ED3AD0D051135D15A54835C48AD1DA5;223.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 101.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
  5447 strings out of 492945
@@ -313,7 +313,7 @@ m/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on final_report.pdf (5 pages, 151434 bytes).
+Output written on final_report.pdf (5 pages, 152952 bytes).
 PDF statistics:
  114 PDF objects out of 1000 (max. 8388607)
  17 named destinations out of 1000 (max. 500000)
