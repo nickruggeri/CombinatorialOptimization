@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?><project>
+	<version>1.0</version>
+	<description>jobshop scheduling application</description>
+	<configs>
+		<config default="true" name="Configuration1" category="opl">
+			<ref name="jsp.mod" type="model">
+			</ref>
+			<ref name="italianFriends.dat" type="data">
+			</ref>
+		</config>
+		<config default="false" name="Configuration2" category="opl">
+			<ref name="jsp.mod" type="model">
+			</ref>
+			<ref name="big10X12.dat" type="data">
+			</ref>
+		</config>
+		<config default="false" name="Configuration3" category="opl">
+			<ref name="jsp.mod" type="model">
+			</ref>
+			<ref name="big12X12.dat" type="data">
+			</ref>
+			<ref name="timelimit.ops" type="setting">
+			</ref>
+		</config>
+	</configs>
+	
+</project>
