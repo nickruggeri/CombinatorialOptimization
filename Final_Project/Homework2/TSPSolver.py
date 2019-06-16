@@ -8,9 +8,9 @@ import numpy as np
 class TSPSolver:
     """ TSP solver using genetic algorithms """
 
-    def __init__(self, init_size=1000, init_type='random', init_best2opt_frac=0.2, fitness='total_cost',
-                 selection='montecarlo', mating='tuples', mating_n=100, crossover='OX', mutation_prob=0.3,
-                 gen_replacement='keep_best', gen_replacement_par=100,
+    def __init__(self, init_size=100, init_type='random', init_best2opt_frac=0.2, fitness='total_cost',
+                 selection='montecarlo', mating='tuples', mating_n=10, crossover='OX', mutation_prob=0.3,
+                 gen_replacement='keep_best', gen_replacement_par=10,
                  stopping={'time': math.inf, 'not_improving_gen': 20}):
         """
         INPUTS:
@@ -117,15 +117,11 @@ class TSPSolver:
         Initialize first generation. Every individual is a permutation of range(0, self.problem_size), in case optimized
         via 2-opt heuristic.
         In case we use the 2-opt heuristic, we compute the actual maximum in the neighbourhood. We could also just look
-        for the first improvement found. This can be done since the function neighbourhood is a generator, but could be
+        for the first improvement found. This can be done since the neighbourhood function is a generator, but could be
         a biased approach due to the ordered discovery of the neighbourhood. To comply with how generations are treated
         in the other functions, the generation is sorted by fitness value
         """
-        # We fix, for every individual, the first entry as 0. This way we avoid repetitions in solutions
-        self.current_generation = [
-            np.hstack([np.zeros(1, dtype=np.int), np.random.permutation(self.problem_size-1) + 1])
-            for _ in range(self.init_size)
-        ]
+        self.current_generation = [np.random.permutation(self.problem_size) for _ in range(self.init_size)]
         if self.init_type == 'best2opt':
             # optimize individual with 2-opt heuristic with probability self.init_best2opt_frac
             for i, individual in enumerate(self.current_generation):
@@ -330,7 +326,7 @@ class TSPSolver:
         elif self.crossover == 'CX':
             # find the cycle
             visited = set()
-            x = np.random.randint(1, self.problem_size)
+            x = np.random.randint(0, self.problem_size)
             while ind1[x] not in visited:
                 visited.add(x)
                 x = np.where(ind1 == ind2[x])[0]
@@ -404,12 +400,6 @@ class TSPSolver:
                 elements.add(new_node)
                 i += 1
             return [off1]        # to comply with returned object type of other crossover types, return a list
-
-        # for all crossover type apart from SCX make sure off1, off2 have as first element 0
-        idx0 = list(off1).index(0)
-        off1 = off1[np.r_[idx0:self.problem_size, 0:idx0]]
-        idx0 = list(off2).index(0)
-        off2 = off2[np.r_[idx0:self.problem_size, 0:idx0]]
         #assert off1.shape[0] == off2.shape[0] ==self.problem_size
         return off1, off2
 
@@ -417,7 +407,7 @@ class TSPSolver:
         """ Mutate individual with a random 2-opt neighbour with probability self.mutation_prob """
         if random.random() <= self.mutation_prob:
             # random cut points
-            c1 = random.randint(1, self.problem_size-1)
+            c1 = random.randint(0, self.problem_size-1)
             c2 = random.randint(c1+1, self.problem_size)
             mutated_ind = ind[np.r_[0:c1, c2-1:c1-1:-1, c2:self.problem_size]]
             #assert len(mutated_ind) == len(set(mutated_ind))
