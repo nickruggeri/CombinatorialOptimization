@@ -6,6 +6,15 @@
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{hyperref}
+\hypersetup{
+     colorlinks = true,
+     linkcolor = blue,
+     anchorcolor = blue,
+     citecolor = blue,
+     filecolor = blue,
+     urlcolor = blue
+     }
 
 
 \begin{document}
@@ -28,24 +37,49 @@ We frame the problem as that of moving between points in the unitary square $[0,
 \begin{equation}\label{eq:cost}
 a_{ij} := {|| x_i - x_j ||}_2
 \end{equation} 
-(CHECK IF THE TWO NORM IS SQUARED OR NOOOOOOOOOOOOOOOOT) The choice of the 2-norm is arbitrary, and could be replaced by any euclidean norm, which could in principle affect the final optimal solution. \\
+The choice of the 2-norm is arbitrary, and could be replaced by any euclidean norm, which could in principle affect the final optimal solution. \\
 Notice that this approach is easily generalized in many ways. For example to exclude some edges from the final solution we just need to impose $a_{ij} = +\infty$. To differenciate the cost between points we can substitute the formulation above with $a_{ij} = f(x_i, x_j)$ for some function $f$ (that doesn't even need to be symmetric in the arguments, as the genetic algorithm from section ).  
 
 \subsection*{Experimental Data}
 Following the process above, we just need to generate any number $n$ of points $x_i \in [0, 1]^2 $, and then build the cost matrix that we will input to the solvers. In our case we decided to generate these points at random in the following way:
 \begin{itemize}
 \item a number $n_1$ of points is generated according to a mixture of equiprobable two-dimensional gaussians with given variance $\sigma^2$ and means $\mu_1, \ldots, \mu_k$. Since the sampled points could end up being outside the allowed space, we clip all the points' coordinates in $[0, 1]$. 
-\item the remaining $n-n_1$ points are equally distributed on a regular grid on  $[0, 1]^2$. This allows to have some clusters, given by the gaussians, and some other points scattered on the square. 
+\item the remaining $n-n_1$ points are radomly distributed on a fixed granularity grid on  $[0, 1]^2$. This allows to have some clusters, given by the gaussians, and some other points scattered on the square. 
 \end{itemize}
-CHECK VERY WELL THIS FORMULATION IF ON THE CODE IS THE SAMEEEEEEEEEEEEEEEEEEEEEEEE
 Notice that this procedure allows, with small probability, overlapping points. This is not a problem for our model, as the solvers need to be able to recognize this peculiarity and find a solution where such points are visited sequentially, since this movement has cost 0 according to equation \eqref{eq:cost}.
 
 
 \section{The Genetic Algorithm}\label{sec:algorithm}
-After the implementation of the OPL model for homework 1, we decided to implement a heuristic for the solution of the problem described above. Specifically, we designed a genetic algorithm, represented as a class CLASS NAMEEEEEE in the code attached to this report. Moreover, we decided to  
+After the use of the OPL model for homework 1, we decided to implement a heuristic for the solution of the problem described above in homework 2. Specifically, we designed a genetic algorithm, represented as a class \textit{TSPSolver} in the code attached to this report. Moreover, we decided to implement this class from scratch. This choice is not due to the lack of Python libraries for genetic algorithms (see for example \href{https://deap.readthedocs.io/en/master/}{DEAP} or  \href{https://pyeasyga.readthedocs.io/en/latest/index.html}{pyeasyga}), but rather to a will to better understand the challenges of a complete implementation of a model, aa well as to a undoubtedly enhanced learning experience. \\
+Details about the implementation are included in the following section.
+
+\subsection*{Implementation Details}
+The genetic algorithm represents solutions to the TSP problem using the path representation. This means that a solution is a permutation of $\{0, \ldots, n-1\}$ where the nodes are listed in order of visit. The only neighbourhood considered is the standard 2-opt neighbourhood. \\
+The following options have been made available in the implementation (see attached for further details, it has been made as clear and documented as possible):
+\begin{itemize}
+\item \textbf{initialization}: individuals (i.e. solutions) are initialized at random. Every generation is made up of a customized size of individuals. At initialization time it is possible to choose a fraction of individuals to substitute with their best 2-opt neighbour
+
+\item \textbf{selection of individuals}: all selection types seen in class have been made available, namely montecarlo, linear ranking and $n$-tournament. This selection type affects which individuals are chosen for mating.
+
+\item \textbf{mating}: two types of mating have been made available. The first is the selection of a given number of pairs of individuals. Every pair gives rise, according to the type of crossover, to one of two individuals as offspring. The second is the selection of a "mating pool": a number of individuals is chosen, and every possible couple undergoes crossover.
+
+\item \textbf{crossover}: many types of crossover are available in literature, two possible reviews are \cite{gupta2011study} and \cite{abdoun2012comparative}. Since we found more clarity in the explanations from \cite{gupta2011study}, we implemented all the crossover types presented there. For clarity, we stick to the notation in reference in the code (which is also pretty intuitive, see the private method \textit{\_crossover} of \textit{TSPSolver})
+
+\item \textbf{mutation}: with a customized probability, every new individual undergoes mutation. If mutated, every individual is substitued with a random 2-opt neighbour
+
+\item \textbf{generation replacement}: it is possible to keep the best $m$ individuals among the old and new generation, or to remove the worst $m$
+
+\item \textbf{stopping criterion}: there are some stopping criteria available: the maximum number of non improving evolution steps, the time limit, the target score (i.e. stop as soon as the best individual passes a certain score threshold) and the maximum number of generations. These can also be used in combination.
+\end{itemize}
+As a final remark, we want to underline that the code has been factorized as much as possible, building appropriate private (or public, even though the difference is almost non-existent in Python) methods for \textit{TSPSolver}. This allows modification/integration of everyone of these customizations with relative ease. The code is also available on \href{https://github.com/NRuggeriProjects/Combinatorial-Optimization}{GitHub}.
+
+
+
 
 
 \section{Experiments}\label{sec:experiments}
+As requested for the homework, here we present a comparison of the performances of the exact OPL solver, with the network flow formulation, and the genetic algorithm. The datasets are built as follows: 
+FINSH THIS SECTION WHEN ALL EXPERIMENTS HAVE BEEN DONE
 
 
 
@@ -61,6 +95,7 @@ After the implementation of the OPL model for homework 1, we decided to implemen
 
 
 
-
-
+\newpage
+\bibliographystyle{ieeetr}
+\bibliography{bibliography}
 \end{document}

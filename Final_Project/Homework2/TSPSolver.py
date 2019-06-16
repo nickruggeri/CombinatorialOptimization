@@ -15,13 +15,13 @@ class TSPSolver:
         """
         INPUTS:
             - init_size: size of first population
-            - init_type: way to initialize first population. One between 'random' (i.e. just random population) and 'best2opt'
-              (i.e. select the best 2 opt neighbour after random initialization). In case 'best2opt' is selected, only a fraction of
-              the population can be mutated, indicated in init_best2opt_frac
-            - init_best2opt_frac: fraction of initial population that is substituted with the best 2-opt neighbour available. Used only
-              if self.init_type = 'best2opt'
-            - fitness: fitness function. Accepted values are 'total_cost', in which case the cost of the individual is computed as
-              fitness function. The project is to expand the list of available fitness functions
+            - init_type: way to initialize first population. One between 'random' (i.e. just random population) and
+              'best2opt' (i.e. select the best 2 opt neighbour after random initialization). In case 'best2opt' is
+              selected, only a fraction of the population can be mutated, indicated in init_best2opt_frac
+            - init_best2opt_frac: fraction of initial population that is substituted with the best 2-opt neighbour
+              available. Used only if self.init_type = 'best2opt'
+            - fitness: fitness function. Accepted values are 'total_cost', in which case the cost of the individual is
+              computed as fitness function. The project is to expand the list of available fitness functions
             - selection: accepted values are
                     'montecarlo'
                     'linear_ranking'
@@ -35,17 +35,20 @@ class TSPSolver:
                     'CX' (cycle crossover)
                     'OX' (order crossover),
                     'LOX' (linear order crossover)
-                    'SCX' (sequential constructive operator). This is the only crossover yielding one offspring instead of 2
-               (see "Study of Crossover operators in Genetic Algorithm for Travelling Salesman Problem" for reference and notation)
-            - mutation_prob: the probability of mutation for every individual after crossover. If a mutation happens, it is of 2-opt
-              type, i.e. two cut points are selected at random and substring reversal is executed
+                    'SCX' (sequential constructive operator). This is the only crossover yielding one offspring instead of two
+              (see "Study of Crossover operators in Genetic Algorithm for Travelling Salesman Problem" for reference and
+              notation)
+            - mutation_prob: the probability of mutation for every individual after crossover. If a mutation happens, it
+              is of 2-opt type, i.e. two cut points are selected at random and substring reversal is executed
             - gen_replacement: accepted values
-                    'keep_best' keep only the best gen_replacement_par individuals among the union between old and new generation
-                    'remove_worst' remove the worst gen_replacement_par individuals among the union between old and new generation
+                    -'keep_best' keep only the best gen_replacement_par individuals among the union between old and new
+                      generation
+                    - 'remove_worst' remove the worst gen_replacement_par individuals among the union between old and
+                      new generation
             - gen_replacement_par: integer, see gen_replacement for explanation
             - stopping: a dictionary that includes all stopping criteria to check. Accepted values in the dictionary are
                     {'time': n_seconds} after which to stop
-                    {'not_improving_gen':n} number of consective non improving generations
+                    {'not_improving_gen':n} number of consecutive non improving generations
                     {'target': x} target objective value, stop if best individual is below x
                     {'max_generations':n} number of maximum generations
 
@@ -216,7 +219,6 @@ class TSPSolver:
             self.current_fitnesses = [old_new_fit[i] for i in sorted_idx[:-self.gen_replacement_par]]
 
         if self.current_fitnesses[0] < self.best_fitness:
-            print('best fitness', self.current_fitnesses[0])
             self.best_fitness = self.current_fitnesses[0]
             self.best_individual = self.current_generation[0]
             self._not_improving_gen_count = 0
