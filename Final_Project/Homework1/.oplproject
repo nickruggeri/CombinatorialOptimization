@@ -2,10 +2,16 @@
 	<version>1.0</version>
 	<description>Homework 1 for Combinatorial Optimization</description>
 	<configs>
-		<config default="true" name="ConfigurationTry" category="opl">
+		<config default="true" name="Experiment_20" category="opl">
 			<ref name="Homework_1_model.mod" type="model">
 			</ref>
-			<ref name="Homework_1.dat" type="data">
+			<ref name="dist_mat_20.dat" type="data">
+			</ref>
+		</config>
+		<config default="false" name="Experiment_100" category="opl">
+			<ref name="Homework_1_model.mod" type="model">
+			</ref>
+			<ref name="dist_mat_100.dat" type="data">
 			</ref>
 		</config>
 	</configs>

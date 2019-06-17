@@ -4,6 +4,13 @@
  * Creation Date: 12/dic/2018 at 21:41:26
  *********************************************/
 
+ // Set Time Constraint for Solver (Optional)
+execute{
+
+    cplex.tilim = 1000;
+
+}
+
 // Parameters
 int N =...;                     // Number of nodes of the graph. Starting node 0, nodes from 0 to N-1
 setof(int) V = asSet(0..N-1);   // Vertices of the graph
@@ -38,5 +45,9 @@ subject to{
 	}
 	
 }
+
+
+
+
 
 

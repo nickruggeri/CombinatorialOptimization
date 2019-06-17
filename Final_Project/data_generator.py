@@ -126,25 +126,25 @@ def main():
         os.mkdir(experimetal_data_dir)
 
     # build data at various sizes. We use half gaussian points and half grid points
-    SAMPLE_SIZES = [100, 1000, 3000]
+    SAMPLE_SIZES = [10, 50, 100]
     for sample_size in SAMPLE_SIZES:
         print('creating and saving data for sample size', sample_size)
         gaussian_points = gaussian_blob(sample_size, sigma_sq=0.02, centers=3)
         grid_points = grid_blob(sample_size, axis_density=1000)
         all_points = np.vstack([gaussian_points, grid_points])
-        path_plot = os.path.join(experimetal_data_dir, 'experimental_data_{}.png'.format(sample_size))
+        path_plot = os.path.join(experimetal_data_dir, 'experimental_data_{}.png'.format(2*sample_size))
         plot_blob(all_points, save=True, path=path_plot, show_plot=False)
         # save points to pickle
-        pkl_path = os.path.join(experimetal_data_dir, 'points_{}.pkl'.format(sample_size))
+        pkl_path = os.path.join(experimetal_data_dir, 'points_{}.pkl'.format(2*sample_size))
         with open(pkl_path, 'wb') as file:
             pkl.dump(all_points, file)
         # save distance matrix for Homework2
         dist_mat = distance_matrix(all_points)
-        homework2_path = 'Homework2/dist_mat_{}.pkl'.format(sample_size)
+        homework2_path = 'Homework2/dist_mat_{}.pkl'.format(2*sample_size)
         with open(homework2_path, 'wb') as file:
             pkl.dump(dist_mat, file)
         # save dat file
-        dat_path = 'Homework1/dist_mat_{}.dat'.format(sample_size)
+        dat_path = 'Homework1/dist_mat_{}.dat'.format(2*sample_size)
         create_dat_file(dist_mat, dat_path)
 
 main()

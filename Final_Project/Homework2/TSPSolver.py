@@ -11,7 +11,7 @@ class TSPSolver:
     def __init__(self, init_size=100, init_type='random', init_best2opt_frac=0.2, fitness='total_cost',
                  selection='montecarlo', mating='tuples', mating_n=10, crossover='OX', mutation_prob=0.3,
                  gen_replacement='keep_best', gen_replacement_par=10,
-                 stopping={'time': math.inf, 'not_improving_gen': 20}):
+                 stopping={'time': math.inf, 'not_improving_gen': 20}, use_logger=True):
         """
         INPUTS:
             - init_size: size of first population
@@ -51,6 +51,8 @@ class TSPSolver:
                     {'not_improving_gen':n} number of consecutive non improving generations
                     {'target': x} target objective value, stop if best individual is below x
                     {'max_generations':n} number of maximum generations
+            - use_logger: if to save intermediate results to logger for future exploration of intermediate results.
+              Since intermediate results could be memory consuming, this option can be set to False
 
         SOME NOTES:
             - the neighbourhood considered is the standard 2-opt, no option is made available to modify this. For
@@ -73,6 +75,12 @@ class TSPSolver:
         self.gen_replacement = gen_replacement
         self.gen_replacement_par = gen_replacement_par
         self.stopping = stopping
+
+        # logger for saving the intermediate solutions. It is a dictionary with keys the times at which new solutions
+        # are found, and values the tuples (solution, score)
+        self._use_logger = use_logger
+        if use_logger:
+            self.logger = dict()
 
         # problem related parameters, instanciated when an actual cost matrix is given for solving a problem instance
         self.problem_size = None
@@ -214,10 +222,13 @@ class TSPSolver:
             self.current_generation = [old_new_gen[i] for i in sorted_idx[:-self.gen_replacement_par]]
             self.current_fitnesses = [old_new_fit[i] for i in sorted_idx[:-self.gen_replacement_par]]
 
+        # if better solution is found, update the best individual and save to logger
         if self.current_fitnesses[0] < self.best_fitness:
             self.best_fitness = self.current_fitnesses[0]
             self.best_individual = self.current_generation[0]
             self._not_improving_gen_count = 0
+            if self._use_logger:
+                self.logger[time.time() - self._starting_time] = (self.best_individual, self.best_fitness)
         else:
             self._not_improving_gen_count += 1
 
@@ -413,3 +424,46 @@ class TSPSolver:
             #assert len(mutated_ind) == len(set(mutated_ind))
             return mutated_ind
         return ind
+
+    def solution_at_time(self, t):
+        """
+        Given a time t, return the couple (solution, score) that was found at that time. If no solution was found,
+        return the tuple (np.array(), -1)
+        REMARK: this search could be made faster if the logger was a binary tree
+        """
+        # recall that (from Python 3) dictionary keys are assured to be returned in the insertion order, so that
+        # self.logger.keys are sorted in increasing order by time
+        if t < (log_time for log_time in self.logger.keys())[0]:
+            return np.array(), -1
+        for log_time in self.logger.keys():
+            if log_time <= t:
+                return self.logger[log_time]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
