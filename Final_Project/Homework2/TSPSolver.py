@@ -11,7 +11,7 @@ class TSPSolver:
     def __init__(self, init_size=100, init_type='random', init_best2opt_frac=0.2, fitness='total_cost',
                  selection='montecarlo', mating='tuples', mating_n=10, crossover='OX', mutation_prob=0.3,
                  gen_replacement='keep_best', gen_replacement_par=10,
-                 stopping={'time': math.inf, 'not_improving_gen': 20}, use_logger=True):
+                 stopping={'time': math.inf, 'not_improving_gen': 1000}, use_logger=True):
         """
         INPUTS:
             - init_size: size of first population
@@ -93,6 +93,9 @@ class TSPSolver:
         self._starting_time = None
         self._not_improving_gen_count = 0
 
+        # total solution time
+        self.solution_time = None
+
     def solve(self, cost_matrix):
         """
         Given the numpy array of the costs, with shape [n,n], solve the problem.
@@ -118,6 +121,7 @@ class TSPSolver:
             # self._not_improving_gen_count are modified in place
             self._evolve_generation()
 
+        self.solution_time = time.time() - self._starting_time
         return self.best_individual, self.best_fitness
 
     def _initialize_generation(self):
@@ -134,9 +138,9 @@ class TSPSolver:
             # optimize individual with 2-opt heuristic with probability self.init_best2opt_frac
             for i, individual in enumerate(self.current_generation):
                 if random.random() <= self.init_best2opt_frac:
-                    neigh = list(self.neighbourhood(individual))
-                    best_neigh_idx = max(range(len(neigh)), key=lambda x: self.fitness_evaluation(x))
-                    self.current_generation[i] = neigh[best_neigh_idx]
+                    neighs = list(self.neighbourhood(individual))
+                    best_neigh_idx = max(range(len(neighs)), key=lambda idx: self.fitness_evaluation(neighs[idx]))
+                    self.current_generation[i] = neighs[best_neigh_idx]
         # compute fitnesses, sort, update best fitness and best individual
         self.current_fitnesses = [self.fitness_evaluation(individual) for individual in self.current_generation]
 
@@ -170,7 +174,7 @@ class TSPSolver:
         """ Generator of all the 2-opt neighbours """
         for i in range(1, self.problem_size-1):
             for j in range(i+1, self.problem_size):
-                yield np.hstack([individual[:i], reversed(individual[i:j]), individual[j:]])
+                yield np.hstack([individual[:i], individual[j-1:i-1:-1], individual[j:]])
 
     def fitness_evaluation(self, individual, split_indices=None, prev_score=None):
         """
@@ -433,11 +437,13 @@ class TSPSolver:
         """
         # recall that (from Python 3) dictionary keys are assured to be returned in the insertion order, so that
         # self.logger.keys are sorted in increasing order by time
-        if t < (log_time for log_time in self.logger.keys())[0]:
+        if t < list(log_time for log_time in self.logger.keys())[0]:
             return np.array(), -1
+        old_log_time = -1
         for log_time in self.logger.keys():
-            if log_time <= t:
-                return self.logger[log_time]
+            if log_time > t:
+                return self.logger[old_log_time]
+            old_log_time = log_time
 
 
 

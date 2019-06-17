@@ -1,4 +1,8 @@
 \BOOKMARK [1][-]{section.1}{Introduction and First Notations}{}% 1
 \BOOKMARK [1][-]{section.2}{Data Generation}{}% 2
-\BOOKMARK [1][-]{section.3}{The Genetic Algorithm}{}% 3
-\BOOKMARK [1][-]{section.4}{Experiments}{}% 4
+\BOOKMARK [2][-]{subsection.2.1}{Distance Matrix}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Experimental Data}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{The Genetic Algorithm}{}% 5
+\BOOKMARK [2][-]{subsection.3.1}{Implementation Details}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.2}{Implementation Challenges}{section.3}% 7
+\BOOKMARK [1][-]{section.4}{Experiments}{}% 8

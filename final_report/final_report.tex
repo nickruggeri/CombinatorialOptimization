@@ -15,6 +15,8 @@
      filecolor = blue,
      urlcolor = blue
      }
+     
+\usepackage{graphicx}
 
 
 \begin{document}
@@ -32,7 +34,7 @@ In the following section we will refer to points equivalently as nodes, and to t
 
 
 \section{Data Generation}\label{sec:data}
-\subsection*{Distance Matrix}
+\subsection{Distance Matrix}
 We frame the problem as that of moving between points in the unitary square $[0, 1]^2$. Notice that this doesn't represent a restriction, since it can be seen as a rescaling of a problem of any size. Given that we have a finite number of points, we can number them from $1$ to $n$, so that the vertex set of the graph is $V = \{ 1, \ldots, n  \}$. Now we consider these two dimensional sampled vectors $x_i \in [0, 1]^2 $, that represent the position of every point in the drilling board. If we want to generate the cost matrix $A$ from these points, a natural interpretation could be to assume a movement time proportional to the distance between the points. In fact in the experiments section \ref{sec:experiments} we consider a distance matrix given by
 \begin{equation}\label{eq:cost}
 a_{ij} := {|| x_i - x_j ||}_2
@@ -40,7 +42,7 @@ a_{ij} := {|| x_i - x_j ||}_2
 The choice of the 2-norm is arbitrary, and could be replaced by any euclidean norm, which could in principle affect the final optimal solution. \\
 Notice that this approach is easily generalized in many ways. For example to exclude some edges from the final solution we just need to impose $a_{ij} = +\infty$. To differenciate the cost between points we can substitute the formulation above with $a_{ij} = f(x_i, x_j)$ for some function $f$ (that doesn't even need to be symmetric in the arguments, as the genetic algorithm from section ).  
 
-\subsection*{Experimental Data}
+\subsection{Experimental Data}\label{sec:experimental_data}
 Following the process above, we just need to generate any number $n$ of points $x_i \in [0, 1]^2 $, and then build the cost matrix that we will input to the solvers. In our case we decided to generate these points at random in the following way:
 \begin{itemize}
 \item a number $n_1$ of points is generated according to a mixture of equiprobable two-dimensional gaussians with given variance $\sigma^2$ and means $\mu_1, \ldots, \mu_k$. Since the sampled points could end up being outside the allowed space, we clip all the points' coordinates in $[0, 1]$. 
@@ -53,7 +55,7 @@ Notice that this procedure allows, with small probability, overlapping points. T
 After the use of the OPL model for homework 1, we decided to implement a heuristic for the solution of the problem described above in homework 2. Specifically, we designed a genetic algorithm, represented as a class \textit{TSPSolver} in the code attached to this report. Moreover, we decided to implement this class from scratch. This choice is not due to the lack of Python libraries for genetic algorithms (see for example \href{https://deap.readthedocs.io/en/master/}{DEAP} or  \href{https://pyeasyga.readthedocs.io/en/latest/index.html}{pyeasyga}), but rather to a will to better understand the challenges of a complete implementation of a model, aa well as to a undoubtedly enhanced learning experience. \\
 Details about the implementation are included in the following section.
 
-\subsection*{Implementation Details}
+\subsection{Implementation Details}
 The genetic algorithm represents solutions to the TSP problem using the path representation. This means that a solution is a permutation of $\{0, \ldots, n-1\}$ where the nodes are listed in order of visit. The only neighbourhood considered is the standard 2-opt neighbourhood. \\
 The following options have been made available in the implementation (see attached for further details, it has been made as clear and documented as possible):
 \begin{itemize}
@@ -73,26 +75,71 @@ The following options have been made available in the implementation (see attach
 
 \item \textbf{fitness function}: here we allowed no option but the total cost of the path (including the return to the initial node 0). This point is just to highlight that for efficiency recursive evaluation of the fitness score has been used when possible (i.e for all points from the second generation onward)
 \end{itemize}
-As a final remark, we want to underline that the code has been factorized as much as possible, building appropriate private (or public, even though the difference is almost non-existent in Python) methods for \textit{TSPSolver}. This allows modification/integration of everyone of these customizations with relative ease. The code is also available on \href{https://github.com/NRuggeriProjects/Combinatorial-Optimization}{GitHub}.
+As a final remark, we would like to to underline that the code has been factorized as much as possible, building appropriate private (or public, even though the difference is almost non-existent in Python) methods for \textit{TSPSolver}. This allows modification/integration of everyone of these customizations with relative ease. The code is also available on \href{https://github.com/NRuggeriProjects/Combinatorial-Optimization}{GitHub}.
 
+\subsection{Implementation Challenges}
+One of the main reasons for the usage of genetic algorithms is their relative speed and ease of implementation. We found that this is actually true, with just some caveats. While the implementation of the single parts of the algorithm is not very challenging, especially due to the fact that the procedure is well organized into distinct sections (selection, mating, crossover, etc.) and due to the (in this case) very clear and explicative metaphor with population evolution. One downside, though, is that in the moment in which one wants to allow more options, things could get messy. For this reason we report, as main difficulty encountered, the need to keep every functionality properly organized, mainly by a great deal of code factorization. As we said above, this need has in the end made the code more tidy and organized, with the possibility to add new features with relative ease.
 
 
 
 
 \section{Experiments}\label{sec:experiments}
-As requested for the homework, here we present a comparison of the performances of the exact OPL solver, with the network flow formulation, and the genetic algorithm. The datasets are built as follows: 
-FINSH THIS SECTION WHEN ALL EXPERIMENTS HAVE BEEN DONE
+As requested for the homework, here we present a comparison of the performances of the exact OPL solver, with the network flow formulation, and the genetic algorithm. The datasets are built as follows: following the procedure from section \ref{sec:experimental_data}, we produce three datasets of sizes 20, 100 and 200 nodes. In these, half of the points come from the gaussian mixture, the other half are scattered on a grid. Plots of the data are presented in figure \ref{fig:datasets}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.3\textwidth]{pics/experimental_data_20.png}
+   \includegraphics[width=0.3\textwidth]{pics/experimental_data_100.png} 
+   \includegraphics[width=0.3\textwidth]{pics/experimental_data_200.png}
+    \caption{synthetic datasets used for the experiments. The sizes are respectively of 20, 100 and 200 nodes. Gaussian clusters points are visible among all other points.}
+    \label{fig:datasets}
+\end{figure}
+
+For evaluation, we run the exact solver and the genetic algorithm 5 times each on each of the first two datasets. We just run once on the third one, allowing a longer time limit. This procedure is justified by the fact that the variability in the results from the first two datasets is so low that it is effectively approximated by zero. CHECK THIS ALSO FOR GENETIC ALGORITHM, AND DECIDE IF TO INCLUDE THE VARIANCE FOR GENETIC ALGORITHM. We comment the results separately in the following sections.
+
+\paragraph*{20 nodes dataset}
+INCLUDE IMAGE ASAP.
+The genetic algorithm solver has been trained using the following parameters: \\
+\newline
+\textit{TSPSolver(
+        init\_size=100, init\_type='best2opt', init\_best2opt\_frac=0.2, fitness='total\_cost',
+        selection='montecarlo', mating='tuples', mating\_n=100, crossover='OX', mutation\_prob=0.2,
+        gen\_replacement='keep\_best', gen\_replacement\_par=100,
+        stopping=\{'time': 1000, 'not\_improving\_gen': 1000\}
+    )} \\
+\newline
+where the important points are: the use of a random $0.2$ best-2opt improvement at initialization, initial population 100 individuals, 100 matings at every generation, $0.2$ probability of mutation and fixed population size of the 100 best elements (see documentation or help from \textit{TSPSolver.\_\_init\_\_}). \\
+For this small instance the exact solution is reached in a short time from the OPL solver. It is interesting to see that also the genetic algorithm succedes in finding the optimal solution in the majority of the instances. 
+ADD PART ABOUT PLOT COMMENT AND PLOT
+
+\paragraph*{100 nodes dataset}
+The genetic algorithm solver has been trained using the following parameters: \\
+\newline
+\textit{TSPSolver(
+        init\_size=1000, init\_type='best2opt', init\_best2opt\_frac=0.2, fitness='total\_cost',
+        selection='montecarlo', mating='tuples', mating\_n=1000, crossover='OX', mutation\_prob=0.2,
+        gen\_replacement='keep\_best', gen\_replacement\_par=1000,
+        stopping={'time': 1000, 'not\_improving\_gen': $+\infty$}
+    )} \\
+\newline
+To allow for a fair comparison between the two methods, the same time constraint of 1000 seconds has been applied. As we can see, the size of the population, both at initialization and during evolution, has been increased to comply with the bigger problem size.
 
 
+\paragraph*{200 nodes dataset}
+The genetic algorithm solver has been trained using the following parameters: \\
+\newline
+\textit{TSPSolver(
+    init\_size=2000, init\_type='best2opt', init\_best2opt\_frac=0.2, fitness='total\_cost',
+    selection='montecarlo', mating='tuples', mating\_n=2000, crossover='OX', mutation\_prob=0.2,
+    gen\_replacement='keep\_best', gen\_replacement\_par=2000,
+    stopping={'time': 10000, 'not\_improving\_gen': $+\infty$}
+)} \\
+\newline
+Again, both methods have been restricted with the same stopping criterion, in this case 10000 seconds of solution time.
 
 
-
-
-
-
-
-
-
+\paragraph*{\null}
+ciao
 
 
 
