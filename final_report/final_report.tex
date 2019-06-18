@@ -40,7 +40,7 @@ We frame the problem as that of moving between points in the unitary square $[0,
 a_{ij} := {|| x_i - x_j ||}_2
 \end{equation} 
 The choice of the 2-norm is arbitrary, and could be replaced by any euclidean norm, which could in principle affect the final optimal solution. \\
-Notice that this approach is easily generalized in many ways. For example to exclude some edges from the final solution we just need to impose $a_{ij} = +\infty$. To differenciate the cost between points we can substitute the formulation above with $a_{ij} = f(x_i, x_j)$ for some function $f$ (that doesn't even need to be symmetric in the arguments, as the genetic algorithm from section ).  
+Notice that this approach is easily generalized in many ways. For example to exclude some edges from the final solution we just need to impose $a_{ij} = +\infty$. To differenciate the cost between points we can substitute the formulation above with $a_{ij} = f(x_i, x_j)$ for some function $f$ (that doesn't even need to be symmetric in the arguments, as the genetic algorithm from section \ref{sec:algorithm} and the OPL solver accept totally general distances).  
 
 \subsection{Experimental Data}\label{sec:experimental_data}
 Following the process above, we just need to generate any number $n$ of points $x_i \in [0, 1]^2 $, and then build the cost matrix that we will input to the solvers. In our case we decided to generate these points at random in the following way:
@@ -52,12 +52,12 @@ Notice that this procedure allows, with small probability, overlapping points. T
 
 
 \section{The Genetic Algorithm}\label{sec:algorithm}
-After the use of the OPL model for homework 1, we decided to implement a heuristic for the solution of the problem described above in homework 2. Specifically, we designed a genetic algorithm, represented as a class \textit{TSPSolver} in the code attached to this report. Moreover, we decided to implement this class from scratch. This choice is not due to the lack of Python libraries for genetic algorithms (see for example \href{https://deap.readthedocs.io/en/master/}{DEAP} or  \href{https://pyeasyga.readthedocs.io/en/latest/index.html}{pyeasyga}), but rather to a will to better understand the challenges of a complete implementation of a model, aa well as to a undoubtedly enhanced learning experience. \\
+After the use of the OPL model for homework 1, we decided to implement a heuristic for the solution of the problem described above in homework 2. Specifically, we designed a genetic algorithm, represented as a class \textit{TSPSolver} in the code attached to this report. Moreover, we decided to implement this class from scratch. This choice is not due to the lack of Python libraries for genetic algorithms (see for example \href{https://deap.readthedocs.io/en/master/}{DEAP} or  \href{https://pyeasyga.readthedocs.io/en/latest/index.html}{pyeasyga}), but rather to a will to better understand the challenges of a complete implementation of a model, as well as to a undoubtedly enhanced learning experience. \\
 Details about the implementation are included in the following section.
 
 \subsection{Implementation Details}
 The genetic algorithm represents solutions to the TSP problem using the path representation. This means that a solution is a permutation of $\{0, \ldots, n-1\}$ where the nodes are listed in order of visit. The only neighbourhood considered is the standard 2-opt neighbourhood. \\
-The following options have been made available in the implementation (see attached for further details, it has been made as clear and documented as possible):
+The following options have been made available in the implementation (see code attached for further details, it has been made as clear and documented as possible):
 \begin{itemize}
 \item \textbf{initialization}: individuals (i.e. solutions) are initialized at random. Every generation is made up of a customized size of individuals. At initialization time it is possible to choose a fraction of individuals to substitute with their best 2-opt neighbour
 
@@ -65,7 +65,7 @@ The following options have been made available in the implementation (see attach
 
 \item \textbf{mating}: two types of mating have been made available. The first is the selection of a given number of pairs of individuals. Every pair gives rise, according to the type of crossover, to one of two individuals as offspring. The second is the selection of a "mating pool": a number of individuals is chosen, and every possible couple undergoes crossover.
 
-\item \textbf{crossover}: many types of crossover are available in literature, two possible reviews are \cite{gupta2011study} and \cite{abdoun2012comparative}. Since we found more clarity in the explanations from \cite{gupta2011study}, we implemented all the crossover types presented there. For clarity, we stick to the notation in reference in the code (which is also pretty intuitive, see the private method \textit{TSPSolver.\_crossover})
+\item \textbf{crossover}: many types of crossover are available in literature, two possible reviews are \cite{gupta2011study} and \cite{abdoun2012comparative}. Since we found more clarity in the explanations from \cite{gupta2011study}, we implemented all the crossover types presented there. For clarity, we stick to the notation in reference in the code (which is also pretty intuitive, see the private method of the solver \textit{TSPSolver.\_crossover})
 
 \item \textbf{mutation}: with a customized probability, every new individual undergoes mutation. If mutated, every individual is substitued with a random 2-opt neighbour
 
@@ -75,10 +75,10 @@ The following options have been made available in the implementation (see attach
 
 \item \textbf{fitness function}: here we allowed no option but the total cost of the path (including the return to the initial node 0). This point is just to highlight that for efficiency recursive evaluation of the fitness score has been used when possible (i.e for all points from the second generation onward)
 \end{itemize}
-As a final remark, we would like to to underline that the code has been factorized as much as possible, building appropriate private (or public, even though the difference is almost non-existent in Python) methods for \textit{TSPSolver}. This allows modification/integration of everyone of these customizations with relative ease. The code is also available on \href{https://github.com/NRuggeriProjects/Combinatorial-Optimization}{GitHub}.
+As a final remark, we would like to to underline that the code has been factorized as much as possible, building appropriate private (or public, even though the difference is almost non-existent in Python) methods for \textit{TSPSolver}. This allows modification/integration of everyone of these customizations with relative ease. The code is also available on \href{https://github.com/NRuggeriProjects/Combinatorial-Optimization}{my GitHub account}.
 
 \subsection{Implementation Challenges}
-One of the main reasons for the usage of genetic algorithms is their relative speed and ease of implementation. We found that this is actually true, with just some caveats. While the implementation of the single parts of the algorithm is not very challenging, especially due to the fact that the procedure is well organized into distinct sections (selection, mating, crossover, etc.) and due to the (in this case) very clear and explicative metaphor with population evolution. One downside, though, is that in the moment in which one wants to allow more options, things could get messy. For this reason we report, as main difficulty encountered, the need to keep every functionality properly organized, mainly by a great deal of code factorization. As we said above, this need has in the end made the code more tidy and organized, with the possibility to add new features with relative ease.
+One of the main reasons for the usage of genetic algorithms is their relative speed and ease of implementation. We found that this is actually true, with just some caveats. The implementation of the single parts of the algorithm is not very challenging, especially due to the fact that the procedure is well organized into distinct sections (selection, mating, crossover, etc.) and due to the (in this case) very clear and explicative metaphor with population evolution. One downside, though, is that in the moment in which one wants to allow more options, things could get messy. For this reason we report, as main difficulty encountered, the need to keep every functionality properly organized, mainly by a great deal of code factorization. As we said above, this need has in the end made the code more tidy and organized, with the possibility to add new features with relative ease.
 
 
 
@@ -95,10 +95,19 @@ As requested for the homework, here we present a comparison of the performances 
     \label{fig:datasets}
 \end{figure}
 
-For evaluation, we run the exact solver and the genetic algorithm 5 times each on each of the first two datasets. We just run once on the third one, allowing a longer time limit. This procedure is justified by the fact that the variability in the results from the first two datasets is so low that it is effectively approximated by zero. CHECK THIS ALSO FOR GENETIC ALGORITHM, AND DECIDE IF TO INCLUDE THE VARIANCE FOR GENETIC ALGORITHM. We comment the results separately in the following sections.
+For evaluation, we run the exact solver and the genetic algorithm 5 times each on each of the first two datasets. We just run once on the third one, allowing a longer time limit. This procedure is justified by the fact that the variability in the results from the first two datasets is low enough to show that results are consistent throughout experiments. Consequently we show confidence intervals only in figure \ref{fig:20and100points}, and only for the genetic algorithm, since the exact solver has almost zero variance. \\
+Moreover, even if only with 200 points, the OPL solver requires more or less two hours to only find a feasible solution (see figure \ref{fig:200points}), making repeated experiments very time consuming. We comment the results separately in the following sections.
 
 \paragraph*{20 nodes dataset}
-INCLUDE IMAGE ASAP.
+
+\begin{figure}
+    \centering
+\includegraphics[width=0.4\textwidth]{pics/20_nodes_results.png}
+\includegraphics[width=0.4\textwidth]{pics/100_nodes_results.png}
+ \caption{results of the experiments of the two smaller datasets of 20 and 100 points}
+\label{fig:20and100points}
+\end{figure}
+
 The genetic algorithm solver has been trained using the following parameters: \\
 \newline
 \textit{TSPSolver(
@@ -108,13 +117,14 @@ The genetic algorithm solver has been trained using the following parameters: \\
         stopping=\{'time': 1000, 'not\_improving\_gen': 1000\}
     )} \\
 \newline
-where the important points are: the use of a random $0.2$ best-2opt improvement at initialization, initial population 100 individuals, 100 matings at every generation, $0.2$ probability of mutation and fixed population size of the 100 best elements (see documentation or help from \textit{TSPSolver.\_\_init\_\_}). \\
-For this small instance the exact solution is reached in a short time from the OPL solver. It is interesting to see that also the genetic algorithm succedes in finding the optimal solution in the majority of the instances. 
-ADD PART ABOUT PLOT COMMENT AND PLOT
+where the important points are: the use of a random $0.2$ probability best-2opt improvement at initialization, initial population 100 individuals, 100 matings at every generation, $0.2$ probability of mutation and fixed population size keeping the 100 best elements (see documentation or help from \textit{TSPSolver.\_\_init\_\_}). \\
+Results are presented in figure \ref{fig:20and100points} (left).
+For this small instance the exact solution is reached in a short time from the OPL solver. It is interesting to see that also the genetic algorithm succedes in finding the optimal solution, and at every moment in time it holds a better score. This trend is not really significant though, as the small instance of the problem doesn't allow to see the expected behaviour, which is instead highlighted in the following results. 
 
 \paragraph*{100 nodes dataset}
+
 The genetic algorithm solver has been trained using the following parameters: \\
-\newline
+\newpage
 \textit{TSPSolver(
         init\_size=1000, init\_type='best2opt', init\_best2opt\_frac=0.2, fitness='total\_cost',
         selection='montecarlo', mating='tuples', mating\_n=1000, crossover='OX', mutation\_prob=0.2,
@@ -122,10 +132,19 @@ The genetic algorithm solver has been trained using the following parameters: \\
         stopping={'time': 1000, 'not\_improving\_gen': $+\infty$}
     )} \\
 \newline
-To allow for a fair comparison between the two methods, the same time constraint of 1000 seconds has been applied. As we can see, the size of the population, both at initialization and during evolution, has been increased to comply with the bigger problem size.
+To allow for a fair comparison between the two methods, the same time constraint of 1000 seconds has been applied. As we can see, the size of the population, both at initialization and during evolution, has been increased to comply with the bigger problem size. \\
+Results are presented in figure \ref{fig:20and100points} (right, notice the log-scale). Even though the OPL solver seems to find a solution on the spot, it then doesn't improve for a very long time. The genetic algorithm instead finds a very good solution in a very short time, which is overcome only after the exact solver approaches (and eventually reaches) the optimal solution.
 
 
 \paragraph*{200 nodes dataset}
+
+\begin{figure}
+    \centering
+\includegraphics[width=0.5\textwidth]{pics/200_nodes_results.png}
+\caption{result of the experiment (single run) on the 200 points dataset}
+\label{fig:200points}
+\end{figure}
+
 The genetic algorithm solver has been trained using the following parameters: \\
 \newline
 \textit{TSPSolver(
@@ -135,16 +154,15 @@ The genetic algorithm solver has been trained using the following parameters: \\
     stopping={'time': 10000, 'not\_improving\_gen': $+\infty$}
 )} \\
 \newline
-Again, both methods have been restricted with the same stopping criterion, in this case 10000 seconds of solution time.
+Again, both methods have been restricted with the same stopping criterion, in this case 10000 seconds of solution time. Here the optimal solution hasn't been found by the exact solver within the time constraints, and is therefore not available. \\
+Results are presented in figure \ref{fig:200points}. We confirm the trend from the previous experiment, where the exact solver finds a better solution of the genetic algorithm only after a long time. Even more, it is able to find a feasible solution only after about 8500 seconds, while TSPSolver is able to find one straight away (indeed, it is already provided with a population of feasible solutions at initialization time). On the other hand, with the increase of the search space magnitude we can see that the solution found by the genetic algorithm seems to be more distant from the optimal one, that is instead asymptotically approached by the OPL solver. In fact, the reported estimated gap between the solution at time 10000 and the optimal results is $1.89\%$ \\
+\newline
+As a final remark, we maybe need to highlight the fact that the genetic algorithm has not undergone extensive parameter optimization, both for reasons of time and because results were satisfying using "reasonable" choices. However, bayesian optimization techniques could be applied as the problem is suited for extensive hyperparameter optimization (for a review about bayesian optimization, see for example \cite{shahriari2015taking}).
 
 
-\null \newline
-As a final remark, we maybe need to highlight the fact that the genetic algorithm has not undergone extensive parameter optimization, both for reasons of time and because results were satisfying using "reasonable" choices. However, with more time also bayesian optimization techniques can be applied ADD REFERENCEEEEEEEE
 
 
 
-
-\newpage
 \bibliographystyle{ieeetr}
 \bibliography{bibliography}
 \end{document}

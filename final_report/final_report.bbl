@@ -10,4 +10,9 @@ O.~Abdoun and J.~Abouchabaka, ``A comparative study of adaptive crossover
   operators for genetic algorithms to resolve the traveling salesman problem,''
   {\em arXiv preprint arXiv:1203.3097}, 2012.
 
+\bibitem{shahriari2015taking}
+B.~Shahriari, K.~Swersky, Z.~Wang, R.~P. Adams, and N.~De~Freitas, ``Taking the
+  human out of the loop: A review of bayesian optimization,'' {\em Proceedings
+  of the IEEE}, vol.~104, no.~1, pp.~148--175, 2015.
+
 \end{thebibliography}

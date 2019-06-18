@@ -438,13 +438,13 @@ class TSPSolver:
         # recall that (from Python 3) dictionary keys are assured to be returned in the insertion order, so that
         # self.logger.keys are sorted in increasing order by time
         if t < list(log_time for log_time in self.logger.keys())[0]:
-            return np.array(), -1
+            return None
         old_log_time = -1
         for log_time in self.logger.keys():
             if log_time > t:
                 return self.logger[old_log_time]
             old_log_time = log_time
-
+        return self.logger[old_log_time]
 
 
 

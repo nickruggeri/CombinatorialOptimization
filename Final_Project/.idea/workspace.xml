@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80c0dcfa-2555-4d78-aa71-31f0a120120b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Final_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Final_Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/read_and_plot_results.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework1/saver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework1/saver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework2/experiment_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework2/experiment_run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework2/TSPSolver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework2/TSPSolver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework2/experiment_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework2/run_experiment.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Homework2/TSPSolver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2052">
-              <caret line="176" column="70" selection-start-line="176" selection-start-column="70" selection-end-line="176" selection-end-column="70" />
+            <state relative-caret-position="-4936">
+              <caret line="82" column="17" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -29,22 +28,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Homework2/experiment_run.py">
+        <entry file="file://$PROJECT_DIR$/read_and_plot_results.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
+            <state relative-caret-position="484">
+              <caret line="158" column="36" lean-forward="true" selection-start-line="158" selection-start-column="36" selection-end-line="158" selection-end-column="36" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Homework1/saver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -87,9 +77,10 @@
         <option value="$PROJECT_DIR$/Homework2/Logger.py" />
         <option value="$PROJECT_DIR$/data_generator.py" />
         <option value="$PROJECT_DIR$/Homework2/tester.py" />
-        <option value="$PROJECT_DIR$/Homework2/TSPSolver.py" />
         <option value="$PROJECT_DIR$/Homework1/saver.py" />
         <option value="$PROJECT_DIR$/Homework2/experiment_run.py" />
+        <option value="$PROJECT_DIR$/Homework2/TSPSolver.py" />
+        <option value="$PROJECT_DIR$/read_and_plot_results.py" />
       </list>
     </option>
   </component>
@@ -111,6 +102,16 @@
             <path>
               <item name="Final_Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Final_Project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Final_Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final_Project" type="462c0819:PsiDirectoryNode" />
+              <item name="experimental_data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Final_Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final_Project" type="462c0819:PsiDirectoryNode" />
+              <item name="Homework2" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -141,7 +142,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.saver">
+  <component name="RunManager" selected="Python.read_and_plot_results">
     <configuration name="data_generator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Final_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -163,27 +164,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="experiment_main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Final_Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Homework2" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\ASUS\Desktop\Combinatorial Optimization\Final_Project\Homework2\tester.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="experiment_run" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Final_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -196,7 +176,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Homework2/experiment_run.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Homework2/run_experiment.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="read_and_plot_results" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Final_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/read_and_plot_results.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -249,18 +250,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.data_generator" />
-      <item itemvalue="Python.experiment_main" />
       <item itemvalue="Python.tester" />
       <item itemvalue="Python.saver" />
       <item itemvalue="Python.experiment_run" />
+      <item itemvalue="Python.read_and_plot_results" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.read_and_plot_results" />
         <item itemvalue="Python.saver" />
         <item itemvalue="Python.experiment_run" />
         <item itemvalue="Python.tester" />
         <item itemvalue="Python.data_generator" />
-        <item itemvalue="Python.experiment_main" />
       </list>
     </recent_temporary>
   </component>
@@ -279,13 +280,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.120913744" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.120913744" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32839313" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.13649635" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29416057" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -337,6 +339,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Homework2/run_experiment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Homework1/saver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -344,22 +356,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.7/site-packages/numpy/core/_methods.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.7/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="2816" column="4" selection-start-line="2816" selection-start-column="4" selection-end-line="2816" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Homework2/TSPSolver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2052">
-          <caret line="176" column="70" selection-start-line="176" selection-start-column="70" selection-end-line="176" selection-end-column="70" />
+        <state relative-caret-position="-4936">
+          <caret line="82" column="17" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Homework2/experiment_run.py">
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.7/site-packages/matplotlib/pyplot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
+        <state relative-caret-position="314">
+          <caret line="686" column="4" selection-start-line="686" selection-start-column="4" selection-end-line="686" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/read_and_plot_results.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="158" column="36" lean-forward="true" selection-start-line="158" selection-start-column="36" selection-end-line="158" selection-end-column="36" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
