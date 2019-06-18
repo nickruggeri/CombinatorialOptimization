@@ -55,7 +55,7 @@ solver = TSPSolver(
 )
 solver.solve(dist_mat)
 print('Best solution found wit fitness', solver.best_fitness)
-with open('200_nodes_experiment_results/solver_{}.pkl'.format(i), 'wb') as file:
+with open('200_nodes_experiment_results/solver_1.pkl', 'wb') as file:
     pkl.dump(solver, file)
 
 
