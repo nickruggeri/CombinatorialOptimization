@@ -157,12 +157,11 @@ for i in range(1, 2):
 
 optimal_solution = None
 times = np.linspace(1000, 10000, 10)
-log_scale = False
+log_scale = True
 saving_path = 'experimental_data/{}_nodes_results.png'.format(nodes)
 plot_results(opl_results, evalg_results, times, optimal_sol=optimal_solution,
              title='Plot of results for {} nodes experiment {}'.format(nodes, 'in log scale' if log_scale else ''),
              show_fig=True, log_scale=log_scale, plot_confidence_interval=False, save_path=saving_path)
-
 
 
 

@@ -48,9 +48,9 @@ with open('dist_mat_200.pkl', 'rb') as file:
     dist_mat = pkl.load(file)
 print('fitting solver...')
 solver = TSPSolver(
-    init_size=2000, init_type='best2opt', init_best2opt_frac=0.2, fitness='total_cost',
-    selection='montecarlo', mating='tuples', mating_n=2000, crossover='OX', mutation_prob=0.2,
-    gen_replacement='keep_best', gen_replacement_par=2000,
+    init_size=5000, init_type='best2opt', init_best2opt_frac=0.2, fitness='total_cost',
+    selection='montecarlo', mating='tuples', mating_n=5000, crossover='OX', mutation_prob=0.2,
+    gen_replacement='keep_best', gen_replacement_par=5000,
     stopping={'time': 10000, 'not_improving_gen': math.inf}
 )
 solver.solve(dist_mat)

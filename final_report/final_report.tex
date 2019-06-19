@@ -126,9 +126,9 @@ For this small instance the exact solution is reached in a short time from the O
 The genetic algorithm solver has been trained using the following parameters: \\
 \newpage
 \textit{TSPSolver(
-        init\_size=1000, init\_type='best2opt', init\_best2opt\_frac=0.2, fitness='total\_cost',
-        selection='montecarlo', mating='tuples', mating\_n=1000, crossover='OX', mutation\_prob=0.2,
-        gen\_replacement='keep\_best', gen\_replacement\_par=1000,
+        init\_size=5000, init\_type='best2opt', init\_best2opt\_frac=0.2, fitness='total\_cost',
+        selection='montecarlo', mating='tuples', mating\_n=5000, crossover='OX', mutation\_prob=0.2,
+        gen\_replacement='keep\_best', gen\_replacement\_par=5000,
         stopping={'time': 1000, 'not\_improving\_gen': $+\infty$}
     )} \\
 \newline
@@ -155,9 +155,9 @@ The genetic algorithm solver has been trained using the following parameters: \\
 )} \\
 \newline
 Again, both methods have been restricted with the same stopping criterion, in this case 10000 seconds of solution time. Here the optimal solution hasn't been found by the exact solver within the time constraints, and is therefore not available. \\
-Results are presented in figure \ref{fig:200points}. We confirm the trend from the previous experiment, where the exact solver finds a better solution of the genetic algorithm only after a long time. Even more, it is able to find a feasible solution only after about 8500 seconds, while TSPSolver is able to find one straight away (indeed, it is already provided with a population of feasible solutions at initialization time). On the other hand, with the increase of the search space magnitude we can see that the solution found by the genetic algorithm seems to be more distant from the optimal one, that is instead asymptotically approached by the OPL solver. In fact, the reported estimated gap between the solution at time 10000 and the optimal results is $1.89\%$ \\
+Results are presented in figure \ref{fig:200points}. We confirm the trend from the previous experiment, where the exact solver finds a better solution of the genetic algorithm only after a long time. Even more, it is able to find a feasible solution only after about 7500 seconds, while TSPSolver is able to find one straight away (indeed, it is already provided with a population of feasible solutions at initialization time). On the other hand, with the increase of the search space magnitude we can see that the solution found by the genetic algorithm seems to be more distant from the optimal one, that is instead asymptotically approached by the OPL solver. In fact, the reported estimated gap between the solution at time 10000 and the optimal results is $1.89\%$ \\
 \newline
-As a final remark, we maybe need to highlight the fact that the genetic algorithm has not undergone extensive parameter optimization, both for reasons of time and because results were satisfying using "reasonable" choices. However, bayesian optimization techniques could be applied as the problem is suited for extensive hyperparameter optimization (for a review about bayesian optimization, see for example \cite{shahriari2015taking}).
+As a final remark, we maybe need to highlight the fact that the genetic algorithm has not undergone extensive parameter optimization, both for reasons of time and because results were satisfying enough using "reasonable" choices. However, bayesian optimization techniques could be applied as the problem is suited for extensive hyperparameter tuning (for a review about bayesian optimization, see for example \cite{shahriari2015taking}).
 
 
 

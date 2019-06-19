@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.2.28)  18 JUN 2019 18:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.2.28)  19 JUN 2019 14:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -380,13 +380,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 126--127
 [5 <./pics/20_nodes_results.png> <./pics/100_nodes_results.png>]
 Overfull \hbox (56.36966pt too wide) in paragraph at lines 133--137
 \OT1/cmr/m/it/10 ness='total[]cost', se-lec-tion='montecarlo', mat-ing='tuples'
-, mat-ing[]n=1000, crossover='OX',
+, mat-ing[]n=5000, crossover='OX',
  []
 
 
 Overfull \hbox (13.64421pt too wide) in paragraph at lines 133--137
 \OT1/cmr/m/it/10 mu-ta-tion[]prob=0.2, gen[]replacement='keep[]best', gen[]repl
-acement[]par=1000, stop-
+acement[]par=5000, stop-
  []
 
 
@@ -434,7 +434,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 168.
 Here is how much of TeX's memory you used:
  5801 strings out of 492649
  85005 string characters out of 6129622
- 175600 words of memory out of 5000000
+ 176600 words of memory out of 5000000
  9596 multiletter control sequences out of 15000+600000
  11849 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -451,7 +451,7 @@ texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
 exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/tex
 live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texl
 ive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on final_report.pdf (7 pages, 261937 bytes).
+Output written on final_report.pdf (7 pages, 265132 bytes).
 PDF statistics:
  171 PDF objects out of 1000 (max. 8388607)
  136 compressed objects within 2 object streams
