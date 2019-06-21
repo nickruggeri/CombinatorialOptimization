@@ -1,5 +1,5 @@
 import _pickle as pkl
-from Homework2.TSPSolver import TSPSolver
+from Final_Project.Homework2.TSPSolver import TSPSolver
 
 
 data_path = 'dist_mat_try.pkl'

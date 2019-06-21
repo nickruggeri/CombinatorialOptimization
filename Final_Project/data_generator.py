@@ -82,38 +82,7 @@ def create_dat_file(dist_mat, path):
         file.write('\n];')
 
 
-'''
-# for saving to Homework1_original OPL folder
-def main_OPL():
-    blob1 = gaussian_blob(80, 0.02, 3)
-    blob2 = grid_blob(100, 1000)
-    blob3 = np.vstack([blob1, blob2])
-    #plot_blob(blob3)
-    
-    dist_mat = distance_matrix(blob1)
-    saving_path = 'Homework1_original/Homework_1_OPL/HHomework_1.dat'
-    print('saving distance matrix of shape', dist_mat.shape, 'in .dat format at path', saving_path)
-    create_dat_file(dist_mat, saving_path)
-
-main_OPL()
-
-# for saving to homework 2 folder
-def main_genetic():
-    blob1 = gaussian_blob(100, 0.02, 3)
-    blob2 = grid_blob(100, 1000)
-    blob3 = np.vstack([blob1, blob2])
-    # plot_blob(blob3)
-
-    dist_mat = distance_matrix(blob3)
-    saving_path = 'Homework2/dist_mat_try.pkl'
-    print('saving distance matrix of shape', dist_mat.shape, 'at path', saving_path)
-    with open(saving_path, 'wb') as file:
-        pkl.dump(dist_mat, file)
-
-main_genetic()
-'''
-
-# used to generate the data fro the actual experiments
+# used to generate the data for the actual experiments
 def main():
     # set seed for reproducibility
     np.random.seed(48)
@@ -143,7 +112,7 @@ def main():
         homework2_path = 'Homework2/dist_mat_{}.pkl'.format(2*sample_size)
         with open(homework2_path, 'wb') as file:
             pkl.dump(dist_mat, file)
-        # save dat file
+        # save dat file for Homework 1
         dat_path = 'Homework1/dist_mat_{}.dat'.format(2*sample_size)
         create_dat_file(dist_mat, dat_path)
 

@@ -2,25 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7e0afb0-946c-46f2-baa0-08d9c753be41" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Final_Project/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final_Project/.idea/Final_Project.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final_Project/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final_Project/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final_Project/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/Lab Exercise 1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final_Project/Homework2/A Comparative Study of Adaptive Crossover Operators for Genetic Algorithms to resolve TSP.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final_Project/Homework2/DEAP distributed genetic algorithms.url" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final_Project/Homework2/Lab Exercise 2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final_Project/Homework2/Study of crossover operators in Genetic Algorithms for TSP.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final_Project/Homework2/TSPSolver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Project/Homework2/TSPSolver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final_Project/Homework2/pyeasyga Python genetic algorithms.url" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_report/final_report.aux" beforeDir="false" afterPath="$PROJECT_DIR$/final_report/final_report.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_report/final_report.blg" beforeDir="false" afterPath="$PROJECT_DIR$/final_report/final_report.blg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_report/final_report.log" beforeDir="false" afterPath="$PROJECT_DIR$/final_report/final_report.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_report/final_report.out" beforeDir="false" afterPath="$PROJECT_DIR$/final_report/final_report.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_report/final_report.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/final_report/final_report.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_report/final_report.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/final_report/final_report.synctex.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_report/final_report.tex" beforeDir="false" afterPath="$PROJECT_DIR$/final_report/final_report.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dantzig G., Thapa M.-Linear programming_ Introduction. Volume 1-Springer (1997).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework1/saver.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework2/20_nodes_experiment_results/solver_1.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Project/Homework2/20_nodes_experiment_results/solver_1.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework2/20_nodes_experiment_results/solver_2.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Project/Homework2/20_nodes_experiment_results/solver_2.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework2/20_nodes_experiment_results/solver_3.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Project/Homework2/20_nodes_experiment_results/solver_3.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework2/20_nodes_experiment_results/solver_4.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Project/Homework2/20_nodes_experiment_results/solver_4.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework2/20_nodes_experiment_results/solver_5.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Project/Homework2/20_nodes_experiment_results/solver_5.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework2/run_experiment.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Project/Homework2/run_experiment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/Homework2/tester.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Project/Homework2/tester.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/data_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Project/data_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/read_and_plot_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Project/read_and_plot_results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/George B. Dantzig, Mukund N. Thapa-Linear Programming_ Theory and extensions. Volume 2-Springer (2003).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modelling by Linear Programming.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Slides/0 - Introduction.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Slides/1 - Modelling by Linear Programming.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Slides/2 - Linear Programming and Simplex Review.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Slides/4 - Heuristics for Combinatorial Optimization - Prof Notes.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Slides/4 - Heuristics for Combinatorial Optimization.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/The assignment problem and totally unimodular matrices.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/key for users list.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simplex method.pdf" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,33 +44,41 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="1" />
+          <entry key="gitignore" value="3" />
+          <entry key="md" value="1" />
+          <entry key="py" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="1" />
+          <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="Python" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="21" />
+          <entry key="gitignore" value="50" />
+          <entry key="md" value="1749" />
+          <entry key="py" value="1470" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="21" />
+          <entry key="Markdown" value="1749" />
+          <entry key="PLAIN_TEXT" value="50" />
+          <entry key="Python" value="1470" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Final_Project/Homework2/TSPSolver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-376">
-              <caret line="386" column="17" lean-forward="true" selection-start-line="386" selection-start-column="17" selection-end-line="386" selection-end-column="17" />
+            <state relative-caret-position="7650">
+              <caret line="450" selection-start-line="450" selection-end-line="450" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -72,7 +86,31 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Final_Project/Homework2/run_experiment.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1445">
+              <caret line="115" column="39" selection-start-line="115" selection-start-column="39" selection-end-line="115" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -86,13 +124,22 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Final_Project/Homework2/TSPSolver.py" />
+        <option value="$PROJECT_DIR$/Final_Project/__init__.py" />
+        <option value="$PROJECT_DIR$/Final_Project/run_experiment.py" />
+        <option value="$PROJECT_DIR$/Final_Project/Homework2/run_experiment.py" />
+        <option value="$PROJECT_DIR$/Final_Project/data_generator.py" />
+        <option value="$PROJECT_DIR$/Final_Project/read_and_plot_results.py" />
+        <option value="$PROJECT_DIR$/Final_Project/README.md" />
+        <option value="$PROJECT_DIR$/Final_Project/Homework2/tester.py" />
+        <option value="$PROJECT_DIR$/Final_Project/.gitignore" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="85" />
-    <option name="width" value="929" />
-    <option name="height" value="1088" />
+    <option name="x" value="2537" />
+    <option name="y" value="-9" />
+    <option name="width" value="743" />
+    <option name="height" value="864" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -112,17 +159,19 @@
               <item name="Combinatorial Optimization" type="462c0819:PsiDirectoryNode" />
               <item name="Final_Project" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Combinatorial Optimization" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Combinatorial Optimization" type="462c0819:PsiDirectoryNode" />
-              <item name="Final_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="Homework2" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Documents\GitHub\Combinatorial Optimization\Final_Project" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -135,6 +184,60 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager" selected="Python.run_experiment">
+    <configuration name="TSPSolver" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Combinatorial Optimization" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Final_Project/Homework2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Final_Project/Homework2/TSPSolver.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_experiment" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Combinatorial Optimization" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Final_Project/Homework2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Final_Project/Homework2/run_experiment.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.TSPSolver" />
+      <item itemvalue="Python.run_experiment" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.run_experiment" />
+        <item itemvalue="Python.TSPSolver" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -150,11 +253,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="-7" width="1476" height="878" extended-state="6" />
+    <frame x="1912" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494788" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14144996" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
@@ -162,7 +265,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3299532" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -176,15 +279,81 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Final_Project/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Final_Project/Homework2/TSPSolver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-376">
-          <caret line="386" column="17" lean-forward="true" selection-start-line="386" selection-start-column="17" selection-end-line="386" selection-end-column="17" />
+        <state relative-caret-position="7650">
+          <caret line="450" selection-start-line="450" selection-end-line="450" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Final_Project/read_and_plot_results.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-782">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Final_Project/Homework1/saver.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Final_Project/Homework2/tester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Final_Project/data_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Final_Project/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="340">
+            <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Final_Project/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Final_Project/Homework2/run_experiment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="115" column="39" selection-start-line="115" selection-start-column="39" selection-end-line="115" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

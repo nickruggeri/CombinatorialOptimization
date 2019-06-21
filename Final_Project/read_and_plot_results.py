@@ -80,9 +80,6 @@ def plot_results(opl_results, evalg_results, times, optimal_sol=None, title=None
         plt.close()
 
 
-
-
-
 # open 20 nodes experiment results
 nodes = 20
 print('\n{} nodes experiment'.format(nodes))
