@@ -18,8 +18,32 @@
      
 \usepackage{graphicx}
 
+\usepackage[procnames]{listings}
+\usepackage{color}
+
+
+
 
 \begin{document}
+% -------------------------------------------
+% stuff for Python code in document
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{0,0,113}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{green}{RGB}{0,150,0}
+ 
+\lstset{language=Python, 
+        basicstyle=\ttfamily\small, 
+        keywordstyle=\color{keywords},
+        commentstyle=\color{comments},
+        stringstyle=\color{red},
+        showstringspaces=false,
+        identifierstyle=\color{green},
+        procnamekeys={def,class}}
+        
+% --------------------------------------------
+
+
 \maketitle
 
 \section{Introduction and  First Notations}
@@ -48,7 +72,15 @@ Following the process above, we just need to generate any number $n$ of points $
 \item a number $n_1$ of points is generated according to a mixture of equiprobable two-dimensional gaussians with given variance $\sigma^2$ and means $\mu_1, \ldots, \mu_k$. Since the sampled points could end up being outside the allowed space, we clip all the points' coordinates in $[0, 1]$. 
 \item the remaining $n-n_1$ points are radomly distributed on a fixed granularity grid on  $[0, 1]^2$. This allows to have some clusters, given by the gaussians, and some other points scattered on the square. 
 \end{itemize}
-Notice that this procedure allows, with small probability, overlapping points. This is not a problem for our model, as the solvers need to be able to recognize this peculiarity and find a solution where such points are visited sequentially, since this movement has cost 0 according to equation \eqref{eq:cost}.
+Notice that this procedure allows, with small probability, overlapping points. This is not a problem for our model, as the solvers need to be able to recognize this peculiarity and find a solution where such points are visited sequentially, since this movement has cost 0 according to equation \eqref{eq:cost}. \\
+This particular choice of data generation has been made to resemble the actual real life problem at hand: the drill is moving over an electric board making holes in preparation for its use. By looking at an actual finished electric board (figure \ref{fig:board}) we can see that some points are naturally clustered together for certain electric components, and some other are less close one another and more distributed.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{pics/electric_frame.png}
+\caption{An electrical component. Notice the presence of clustered components, as well as scattered points}
+\label{fig:board}
+\end{figure}
 
 
 \section{The Genetic Algorithm}\label{sec:algorithm}
@@ -56,6 +88,7 @@ After the use of the OPL model for homework 1, we decided to implement a heurist
 Details about the implementation are included in the following section.
 
 \subsection{Implementation Details}
+\subsubsection{Funcionalities}
 The genetic algorithm represents solutions to the TSP problem using the path representation. This means that a solution is a permutation of $\{0, \ldots, n-1\}$ where the nodes are listed in order of visit. The only neighbourhood considered is the standard 2-opt neighbourhood. \\
 The following options have been made available in the implementation (see code attached for further details, it has been made as clear and documented as possible):
 \begin{itemize}
@@ -76,6 +109,32 @@ The following options have been made available in the implementation (see code a
 \item \textbf{fitness function}: here we allowed no option but the total cost of the path (including the return to the initial node 0). This point is just to highlight that for efficiency recursive evaluation of the fitness score has been used when possible (i.e for all points from the second generation onward)
 \end{itemize}
 As a final remark, we would like to to underline that the code has been factorized as much as possible, building appropriate private (or public, even though the difference is almost non-existent in Python) methods for \textit{TSPSolver}. This allows modification/integration of everyone of these customizations with relative ease. The code is also available on \href{https://github.com/NRuggeriProjects/Combinatorial-Optimization}{my GitHub account}.
+
+
+\subsubsection{Technical Details}
+In this section we just include some technical details about the implementations itself. \\
+As we said, the solution representation of choice is the path representation. Since the natural translation is to use array objects to encode such solutions (or individuals), in Python one could use, for example, a simple list. We decided to go for \href{https://www.numpy.org/}{numpy} arrays. These allow for optimized vectorial operations, which come in handy at the crossover step, and are usually regarded as an efficient array tool for general use. \\
+The actual solution flow executes as follows. 
+\paragraph*{Initialization} First, a \textit{TSPSolver} instance needs to be created. At initialization moment the solver object is endowed with some attributes regarding the options included in the section above. At this stage also some other placeholder attributes are attached to the it. These include some private attributes, used for the solution loop (such as the starting time in case the time is among the sopping criteria, the generations count, etc.) as well as variables that are inferred when an actual cost matrix is given as input for the problem. \\
+The private attibutes (which are indicated by a leading underscore in Python) are used by the solver and are not intended for the final user. These inlcude the current generations and relative fitness values, and are continuously modified during the "evolution" step. Second, there are variables intended for posterior reference, such as the best individual (i.e. the solution) and the relative fitness. Also the cost matrix and problem size are public attributes that one can access later. 
+\paragraph*{Solution} After a solver object has been created, one can call the \textit{solve} method, providing a cost matrix. Notice again, that the cost matrix has to be a square, two-dimensional, numpy array. This \textit{solve} method is actually just a coordinator that, after saving all the variables from above (cost matrix, problem size, etc.) sequentially calls private methods for the single steps of the evolution. These are \textit{\_initialize\_generation} and, while no stopping criterion is satisfied, \textit{\_evolve\_generation}. The \textit{\_evolve\_generation} method, in turn, calls in order the \textit{\_select\_individuals} and \textit{\_mating\_and\_mutation} and then updates the actual generation according to the generation replacement criterion provided by the user. \\
+In the end, the code for running the solution loop is pretty simple, and looks something like this:
+\newline
+\begin{lstlisting}	
+solver = TSPSolver()     # in case modify default parameters
+
+with open('cost_matrix.pkl', 'rb') as file:
+	cost_matrix = pkl.load(file)
+	
+solver.solve(cost_matrix)
+
+print(
+'The best solution found is {}, with score {}'.format(
+	solver.best_individual, solver.best_fitness
+	)
+)
+\end{lstlisting}
+Notice that this way of handling problems, i.e. by using a class that stores all the information needed for and after the solution is also typical of the Python approach to machine learning, for example in \href{https://scikit-learn.org/stable/}{scikit-learn} objects or \href{https://keras.io/}{keras} models. The advantage is the possibility of clear and concise sintax, automation and possibility of simple saving procedures, since the class instance incapsulates all the parameters and procedures.
 
 \subsection{Implementation Challenges}
 One of the main reasons for the usage of genetic algorithms is their relative speed and ease of implementation. We found that this is actually true, with just some caveats. The implementation of the single parts of the algorithm is not very challenging, especially due to the fact that the procedure is well organized into distinct sections (selection, mating, crossover, etc.) and due to the (in this case) very clear and explicative metaphor with population evolution. One downside, though, is that in the moment in which one wants to allow more options, things could get messy. For this reason we report, as main difficulty encountered, the need to keep every functionality properly organized, mainly by a great deal of code factorization. As we said above, this need has in the end made the code more tidy and organized, with the possibility to add new features with relative ease.
@@ -124,7 +183,6 @@ For this small instance the exact solution is reached in a short time from the O
 \paragraph*{100 nodes dataset}
 
 The genetic algorithm solver has been trained using the following parameters: \\
-\newpage
 \textit{TSPSolver(
         init\_size=5000, init\_type='best2opt', init\_best2opt\_frac=0.2, fitness='total\_cost',
         selection='montecarlo', mating='tuples', mating\_n=5000, crossover='OX', mutation\_prob=0.2,

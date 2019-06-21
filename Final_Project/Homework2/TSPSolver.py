@@ -87,8 +87,8 @@ class TSPSolver:
         self.cost_matrix = None
         self.best_fitness = None
         self.best_individual = None
-        self.current_generation = []
-        self.current_fitnesses = []
+        self._current_generation = []
+        self._current_fitnesses = []
         self.generations_count = 0
         self._starting_time = None
         self._not_improving_gen_count = 0
@@ -117,7 +117,7 @@ class TSPSolver:
 
         while not self._stop_check_satisfied():
             # run all evolution steps, and evaluate fitness recursively.
-            # self.current generation, self.current_fitnesses, self.best_fitness, self.best_individual and
+            # self.current generation, self._current_fitnesses, self.best_fitness, self.best_individual and
             # self._not_improving_gen_count are modified in place
             self._evolve_generation()
 
@@ -133,26 +133,26 @@ class TSPSolver:
         a biased approach due to the ordered discovery of the neighbourhood. To comply with how generations are treated
         in the other functions, the generation is sorted by fitness value
         """
-        self.current_generation = [np.random.permutation(self.problem_size) for _ in range(self.init_size)]
+        self._current_generation = [np.random.permutation(self.problem_size) for _ in range(self.init_size)]
         if self.init_type == 'best2opt':
             # optimize individual with 2-opt heuristic with probability self.init_best2opt_frac
-            for i, individual in enumerate(self.current_generation):
+            for i, individual in enumerate(self._current_generation):
                 if random.random() <= self.init_best2opt_frac:
                     neighs = list(self.neighbourhood(individual))
                     best_neigh_idx = max(range(len(neighs)), key=lambda idx: self.fitness_evaluation(neighs[idx]))
-                    self.current_generation[i] = neighs[best_neigh_idx]
+                    self._current_generation[i] = neighs[best_neigh_idx]
         # compute fitnesses, sort, update best fitness and best individual
-        self.current_fitnesses = [self.fitness_evaluation(individual) for individual in self.current_generation]
+        self._current_fitnesses = [self.fitness_evaluation(individual) for individual in self._current_generation]
 
         ordered_idx = sorted(
-            range(len(self.current_generation)),
-            key=lambda ind: self.current_fitnesses[ind]
+            range(len(self._current_generation)),
+            key=lambda ind: self._current_fitnesses[ind]
         )
-        self.current_generation = [self.current_generation[i] for i in ordered_idx]
-        self.current_fitnesses = [self.current_fitnesses[i] for i in ordered_idx]
+        self._current_generation = [self._current_generation[i] for i in ordered_idx]
+        self._current_fitnesses = [self._current_fitnesses[i] for i in ordered_idx]
 
-        self.best_individual = self.current_generation[0]
-        self.best_fitness = self.current_fitnesses[0]
+        self.best_individual = self._current_generation[0]
+        self.best_fitness = self._current_fitnesses[0]
 
     def _stop_check_satisfied(self):
         """ Check if any stopping criterion instanciated is satisfied """
@@ -215,21 +215,21 @@ class TSPSolver:
         next_fit = list(map(lambda x: self.fitness_evaluation(x), next_gen))
 
         # select individuals according to generational replacement policy
-        old_new_gen = self.current_generation + next_gen
-        old_new_fit = self.current_fitnesses + next_fit
+        old_new_gen = self._current_generation + next_gen
+        old_new_fit = self._current_fitnesses + next_fit
 
         sorted_idx = sorted(range(len(old_new_fit)), key=lambda i: old_new_fit[i])
         if self.gen_replacement == 'keep_best':
-            self.current_generation = [old_new_gen[i] for i in sorted_idx[:self.gen_replacement_par]]
-            self.current_fitnesses = [old_new_fit[i] for i in sorted_idx[:self.gen_replacement_par]]
+            self._current_generation = [old_new_gen[i] for i in sorted_idx[:self.gen_replacement_par]]
+            self._current_fitnesses = [old_new_fit[i] for i in sorted_idx[:self.gen_replacement_par]]
         elif self.gen_replacement == 'remove_worst':
-            self.current_generation = [old_new_gen[i] for i in sorted_idx[:-self.gen_replacement_par]]
-            self.current_fitnesses = [old_new_fit[i] for i in sorted_idx[:-self.gen_replacement_par]]
+            self._current_generation = [old_new_gen[i] for i in sorted_idx[:-self.gen_replacement_par]]
+            self._current_fitnesses = [old_new_fit[i] for i in sorted_idx[:-self.gen_replacement_par]]
 
         # if better solution is found, update the best individual and save to logger
-        if self.current_fitnesses[0] < self.best_fitness:
-            self.best_fitness = self.current_fitnesses[0]
-            self.best_individual = self.current_generation[0]
+        if self._current_fitnesses[0] < self.best_fitness:
+            self.best_fitness = self._current_fitnesses[0]
+            self.best_individual = self._current_generation[0]
             self._not_improving_gen_count = 0
             if self._use_logger:
                 self.logger[time.time() - self._starting_time] = (self.best_individual, self.best_fitness)
@@ -244,7 +244,7 @@ class TSPSolver:
         Select individuals according to probability and mating type.
         Depending on the type of mating, return a list of couples for mating or a list
         of individuals. In the returned object, individuals are represented by their
-        index in self.current_generation
+        index in self._current_generation
         """
         if self.mating == 'tuples':
             return [self._random_selection(2) for _ in range(self.mating_n)]
@@ -256,19 +256,19 @@ class TSPSolver:
         if self.selection == 'montecarlo':
             # select individuals with probability proportional to their fitness
             return list(np.random.choice(
-                    len(self.current_generation), n,
-                    p=self.current_fitnesses/sum(self.current_fitnesses)
+                    len(self._current_generation), n,
+                    p=self._current_fitnesses / sum(self._current_fitnesses)
                     ))
         elif self.selection == 'linear_ranking':
             # recall that generations are sorted by fitness, so that the ranks are already (k, k-1, ... ,2,1)
             return list(np.random.choice(
-                    len(self.current_generation), n,
-                    p=2*np.arange(len(self.current_generation, 0, -1))/((len(self.current_generation+1)+1)*len(self.current_generation))
+                    len(self._current_generation), n,
+                    p=2 * np.arange(len(self._current_generation, 0, -1)) / ((len(self._current_generation + 1) + 1) * len(self._current_generation))
                     ))
         elif self.selection == 'n_tournament':
             # recall that generations are sorted by fitness, so that if we select some indices at random, the minimum
             # one is already the index of the fittest individual
-            return [min(np.random.choice(len(self.current_generation))) for _ in range(n)]
+            return [min(np.random.choice(len(self._current_generation))) for _ in range(n)]
 
     def _mating_and_mutation(self, sel):
         """
@@ -296,7 +296,7 @@ class TSPSolver:
         self._current_generation. Return two individuals as offspring
         """
         # individuals are given in input as indexes. Retrieve the actual individuals from self._current_generation
-        ind1, ind2 = self.current_generation[ind1], self.current_generation[ind2]
+        ind1, ind2 = self._current_generation[ind1], self._current_generation[ind2]
         # initialize offspring
         off1 = np.zeros(self.problem_size, dtype=np.int)
         off2 = np.zeros(self.problem_size, dtype=np.int)    # not used if self.crossover == 'SCX'
@@ -380,8 +380,9 @@ class TSPSolver:
             off2[np.r_[0:c1, c2:self.problem_size]] = [x for x in ind2 if x not in elements2]
 
         elif self.crossover == 'SCX':
-            off1[0] = 0   # off1[0] is already zero, as off1 = np.zeros(self.problem_size), but include just for clarity
-            # keep a set of inserted nodes in the offspring, so as to allow fast checkup
+            # off1[0] is already zero, as off1 = np.zeros(self.problem_size), but include just for clarity
+            off1[0] = 0
+            # Keep a set of nodes inserted in the offspring, so as to allow fast check through hashing
             elements = {0}
             i = 0
             list_ind1 = list(ind1)   # to avoid converting list(ind1) at every loop
