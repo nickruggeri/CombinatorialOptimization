@@ -261,9 +261,11 @@ class TSPSolver:
                     ))
         elif self.selection == 'linear_ranking':
             # recall that generations are sorted by fitness, so that the ranks are already (k, k-1, ... ,2,1)
+            m = len(self._current_generation)
+            assert sum(2 * np.arange(m, 0, -1) / ((m + 1) * m)) == 1
             return list(np.random.choice(
                     len(self._current_generation), n,
-                    p=2 * np.arange(len(self._current_generation, 0, -1)) / ((len(self._current_generation + 1) + 1) * len(self._current_generation))
+                    p=2 * np.arange(m, 0, -1) / ((m + 1) * m)
                     ))
         elif self.selection == 'n_tournament':
             # recall that generations are sorted by fitness, so that if we select some indices at random, the minimum
@@ -287,7 +289,7 @@ class TSPSolver:
                 for j in range(i+1, len(sel))
                 for ind in self._crossover(sel[i], sel[j])
             ]
-        assert all(ind.shape[0]==self.problem_size for ind in next_gen)
+        assert all(x in ind for x in range(self.problem_size) for ind in next_gen)
         return [self._mutate_individual(ind) for ind in next_gen]
 
     def _crossover(self, ind1, ind2):
@@ -338,11 +340,15 @@ class TSPSolver:
 
         elif self.crossover == 'CX':
             # find the cycle
-            visited = set()
             x = np.random.randint(0, self.problem_size)
-            while ind1[x] not in visited:
+            list_ind1 = list(ind1)
+            visited = {x}
+            visited_values = {ind1[x]}
+            while ind2[x] not in visited_values:
+                x = list_ind1.index(ind2[x])
                 visited.add(x)
-                x = np.where(ind1 == ind2[x])[0]
+                visited_values.add(ind1[x])
+            del list_ind1
             visited = list(visited)
             mask = np.zeros(self.problem_size, dtype=bool)
             mask[visited] = True
@@ -350,6 +356,8 @@ class TSPSolver:
             off1[~mask] = ind2[~mask]
             off2[mask] = ind2[mask]
             off2[~mask] = ind1[~mask]
+            assert all(x in off1 for x in range(self.problem_size))
+            assert all(x in off2 for x in range(self.problem_size))
 
         elif self.crossover == 'OX':
             # random cut points
@@ -363,10 +371,9 @@ class TSPSolver:
                                                        if x not in elements1]
             off2[np.r_[c2:self.problem_size, 0:c1]] = [x for x in ind1[np.r_[c2:self.problem_size, 0:c2]]
                                                        if x not in elements2]
-            assert off1.shape[0]==off2.shape[0]==self.problem_size
         elif self.crossover == 'LOX':
             # random cut points
-            c1 = random.randint(self.problem_size-1)
+            c1 = random.randint(0, self.problem_size-1)
             c2 = random.randint(c1+1, self.problem_size)
 
             off1[c1:c2] = ind2[c1:c2]
@@ -380,51 +387,55 @@ class TSPSolver:
         elif self.crossover == 'SCX':
             # off1[0] is already zero, as off1 = np.zeros(self.problem_size), but include just for clarity
             off1[0] = 0
-            # Keep a set of nodes inserted in the offspring, so as to allow fast check through hashing
+            # Keep a set of nodes inserted in the offspring, so as to allow fast checkup through hashing
             elements = {0}
-            i = 0
             list_ind1 = list(ind1)   # to avoid converting list(ind1) at every loop
             list_ind2 = list(ind2)
-            while i < self.problem_size:
+            for i in range(self.problem_size - 1):
                 idx1 = list_ind1.index(off1[i])
                 idx2 = list_ind2.index(off1[i])
                 # first node visited after node off1[i] in ind1
+                # if no node available, explore sequentially nodes 2, 3, ..., n
                 while idx1 < self.problem_size and ind1[idx1] in elements:
                     idx1 += 1
-                # if no node available, explore sequentially nodes 2, 3, ..., n
-                if idx1 == self.problem_size:
-                    idx1 = 0
-                    while idx1 in elements:
-                        idx1 += 1
+                if idx1 < self.problem_size:
+                    next_node_1 = ind1[idx1]
+                else:
+                    next_node_1 = 0
+                    while next_node_1 in elements:
+                        next_node_1 += 1
+                cost1 = self.cost_matrix[off1[i], next_node_1]
                 # same thing for parent 2
                 while idx2 < self.problem_size and ind2[idx2] in elements:
                     idx2 += 1
-                if idx2 == self.problem_size:
-                    idx2 = 0
-                    while idx2 in elements:
-                        idx2 += 1
-                # compare costs of connection with newly chosen node
-                cost1 = self.cost_matrix[off1[i], ind1[idx1]]
-                cost2 = self.cost_matrix[off1[i], ind1[idx2]]
-                if cost1 < cost2:
-                    new_node = ind1[idx1]
+                if idx2 < self.problem_size:
+                    next_node_2 = ind2[idx2]
                 else:
-                    new_node = ind2[idx2]
+                    next_node_2 = 0
+                    while next_node_2 in elements:
+                        next_node_2 += 1
+                cost2 = self.cost_matrix[off1[i], next_node_2]
+                # compare costs of connection with newly chosen node
+                if cost1 < cost2:
+                    new_node = next_node_1
+                else:
+                    new_node = next_node_2
                 off1[i+1] = new_node
                 elements.add(new_node)
-                i += 1
             return [off1]        # to comply with returned object type of other crossover types, return a list
-        assert off1.shape[0] == off2.shape[0] ==self.problem_size
+        assert off1.shape[0] == off2.shape[0] == self.problem_size
+        assert all(x in off1 for x in range(self.problem_size)) and all(x in off2 for x in range(self.problem_size))
         return off1, off2
 
     def _mutate_individual(self, ind):
         """ Mutate individual with a random 2-opt neighbour with probability self.mutation_prob """
+        assert all(x in ind for x in range(self.problem_size))
         if random.random() <= self.mutation_prob:
             # random cut points
             c1 = random.randint(0, self.problem_size-1)
             c2 = random.randint(c1+1, self.problem_size)
             mutated_ind = ind[np.r_[0:c1, c2-1:c1-1:-1, c2:self.problem_size]]
-            assert len(mutated_ind) == len(set(mutated_ind))
+            assert all(x in mutated_ind for x in range(self.problem_size))
             return mutated_ind
         return ind
 
