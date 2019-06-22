@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.13)  22 JUN 2019 08:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.13)  22 JUN 2019 10:37
 entering extended mode
 **./final_report.tex
 (final_report.tex
@@ -363,7 +363,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
  [1
 
 {C:/Users/ASUS/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<pics/electric_frame.png, id=74, 329.43076pt x 177.0615pt>
+<pics/electric_frame.png, id=78, 329.43076pt x 177.0615pt>
 File: pics/electric_frame.png Graphic file (type png)
 <use pics/electric_frame.png>
 Package pdftex.def Info: pics/electric_frame.png  used on input line 82.
@@ -374,19 +374,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--125
  []
 
 [5]
-<pics/experimental_data_20.png, id=126, 462.528pt x 346.896pt>
+<pics/experimental_data_20.png, id=130, 462.528pt x 346.896pt>
 File: pics/experimental_data_20.png Graphic file (type png)
 <use pics/experimental_data_20.png>
 Package pdftex.def Info: pics/experimental_data_20.png  used on input line 152.
 
 (pdftex.def)             Requested size: 103.50105pt x 77.62477pt.
-<pics/experimental_data_100.png, id=127, 462.528pt x 346.896pt>
+<pics/experimental_data_100.png, id=131, 462.528pt x 346.896pt>
 File: pics/experimental_data_100.png Graphic file (type png)
 <use pics/experimental_data_100.png>
 Package pdftex.def Info: pics/experimental_data_100.png  used on input line 153
 .
 (pdftex.def)             Requested size: 103.50105pt x 77.62477pt.
-<pics/experimental_data_200.png, id=128, 462.528pt x 346.896pt>
+<pics/experimental_data_200.png, id=132, 462.528pt x 346.896pt>
 File: pics/experimental_data_200.png Graphic file (type png)
 <use pics/experimental_data_200.png>
 Package pdftex.def Info: pics/experimental_data_200.png  used on input line 154
@@ -412,46 +412,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 161--173
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 174.
 
-<pics/20_nodes_results.png, id=142, 462.528pt x 346.896pt>
+<pics/20_nodes_results.png, id=146, 462.528pt x 346.896pt>
 File: pics/20_nodes_results.png Graphic file (type png)
 <use pics/20_nodes_results.png>
 Package pdftex.def Info: pics/20_nodes_results.png  used on input line 199.
 (pdftex.def)             Requested size: 137.9979pt x 103.49792pt.
-<pics/100_nodes_results.png, id=143, 462.528pt x 346.896pt>
+<pics/100_nodes_results.png, id=147, 462.528pt x 346.896pt>
 File: pics/100_nodes_results.png Graphic file (type png)
 <use pics/100_nodes_results.png>
 Package pdftex.def Info: pics/100_nodes_results.png  used on input line 200.
 (pdftex.def)             Requested size: 137.9979pt x 103.49792pt.
 [7]
-<pics/200_nodes_results.png, id=155, 462.528pt x 346.896pt>
+<pics/200_nodes_results.png, id=160, 462.528pt x 346.896pt>
 File: pics/200_nodes_results.png Graphic file (type png)
 <use pics/200_nodes_results.png>
 Package pdftex.def Info: pics/200_nodes_results.png  used on input line 218.
 (pdftex.def)             Requested size: 207.0021pt x 155.25484pt.
- [8 <./pics/20_nodes_results.png> <./pics/100_nodes_results.png>]
-(final_report.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 232.
- [9 <./pics/200_nodes_results.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 232.
+ [8 <./pics/20_nodes_results.png> <./pics/100_nodes_results.png>] [9 <./pics/20
+0_nodes_results.png>] (final_report.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 238.
+ [10]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 238.
  (final_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 232.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 232.
-
-
-Package rerunfilecheck Warning: File `final_report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `final_report.out':
-(rerunfilecheck)             Before: 8F3D3C8B6A23E7AE755049FD81DBB4F4;783
-(rerunfilecheck)             After:  985BB110A6E3D4BF877812D24716C6DB;784.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 232.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 238.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 238.
+Package rerunfilecheck Info: File `final_report.out' has not changed.
+(rerunfilecheck)             Checksum: 302050EF16782FC96B2D5688BB418CCC;832.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 238.
  ) 
 Here is how much of TeX's memory you used:
- 7690 strings out of 492945
- 109380 string characters out of 3135516
- 391191 words of memory out of 3000000
- 11454 multiletter control sequences out of 15000+200000
+ 7694 strings out of 492945
+ 109434 string characters out of 3135516
+ 391241 words of memory out of 3000000
+ 11456 multiletter control sequences out of 15000+200000
  12543 words of font info for 49 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,15n,40p,907b,1247s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -468,9 +461,9 @@ s/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7
 Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/
 fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on final_report.pdf (9 pages, 730708 bytes).
+Output written on final_report.pdf (10 pages, 737442 bytes).
 PDF statistics:
- 230 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
- 132 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 239 PDF objects out of 1000 (max. 8388607)
+ 52 named destinations out of 1000 (max. 500000)
+ 140 words of extra memory for PDF output out of 10000 (max. 10000000)
 

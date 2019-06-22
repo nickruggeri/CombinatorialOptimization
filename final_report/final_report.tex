@@ -156,7 +156,7 @@ As requested for the homework, here we present a comparison of the performances 
     \label{fig:datasets}
 \end{figure}
 
-\subsection{Parameters Selection}
+\subsection{Parameters Selection}\label{sec: parameters selection}
 For everyone of the datasets studied, we first need to run a parameter optimization procedure on the genetic algorithm. The way we chose to do so is to try to solve the specific problem instance on a grid of possible parameters, and then keep the best setting for the experiments. The only difference between the actual experiments and the parameters selection phase is the stopping criterion: to allow for fast exploration of the parameters grid we set a early stopping criterion with respect to the final experiment. Settings for the grid search, including the more strict stopping criteria and the best settings found, are included in table \ref{tab: parameters selection}. \\ \newpage
 For all other parameters the default value is used, namely: \\
 \newline
@@ -204,10 +204,10 @@ Moreover, even if only with 200 points, the OPL solver requires more or less two
 
 
 Results are presented in figure \ref{fig:20and100points} (left).
-For this small instance the exact solution is reached in a short time from the OPL solver. It is interesting to see that also the genetic algorithm succedes in finding the optimal solution, and at every moment in time it holds a better score. This trend is not really significant though, as the small instance of the problem doesn't allow to see the expected behaviour, which is instead highlighted in the following results. 
+For this small instance the exact solution is reached in a short time from the OPL solver. The comparison between the gentic algorithm and the exact solver is interesting, and presents some characteristics that reflect what we usually expect. In fact the genetic algorithm in general finds a generic solution in a shorter time (indeed, it is already provided with a population of feasible solutions at initialization time), and keeps a better solution in time, untill the OPL solver gets close to the optimum.
 
 \paragraph*{100 nodes dataset}
-To allow for a fair comparison between the two methods, the same time constraint of 1000 seconds has been applied. As we can see, the size of the population, both at initialization and during evolution, has been increased to comply with the bigger problem size. \\
+To allow for a fair comparison between the two methods, the same time constraint of 1000 seconds has been applied. As we can see, the size of the population, both at initialization and during evolution, has been increased to comply with the bigger problem size, as from section \ref{sec: parameters selection}. \\
 Results are presented in figure \ref{fig:20and100points} (right, notice the log-scale). Even though the OPL solver seems to find a solution on the spot, it then doesn't improve for a very long time. The genetic algorithm instead finds a very good solution in a very short time, which is overcome only after the exact solver approaches (and eventually reaches) the optimal solution.
 
 
@@ -220,8 +220,14 @@ Results are presented in figure \ref{fig:20and100points} (right, notice the log-
 \label{fig:200points}
 \end{figure}
 
-Again, both methods have been restricted with the same stopping criterion, in this case 10000 seconds of solution time. Here the optimal solution hasn't been found by the exact solver within the time constraints, and is therefore not available. \\
-Results are presented in figure \ref{fig:200points}. We confirm the trend from the previous experiment, where the exact solver finds a better solution of the genetic algorithm only after a long time. Even more, it is able to find a feasible solution only after about 7500 seconds, while TSPSolver is able to find one straight away (indeed, it is already provided with a population of feasible solutions at initialization time). On the other hand, with the increase of the search space magnitude we can see that the solution found by the genetic algorithm seems to be more distant from the optimal one, that is instead asymptotically approached by the OPL solver. In fact, the reported estimated gap between the solution at time 10000 and the optimal results is $1.89\%$ 
+Again, both methods have been restricted with the same stopping criterion, in this case 10000 seconds of computation time. Here the optimal solution hasn't been found by the exact solver within the time constraints, and is therefore not available. \\
+Results are presented in figure \ref{fig:200points}. We confirm the trend from the previous experiments, where the exact solver finds a better solution of the genetic algorithm only after a long time. Even more, it is able to find a feasible solution only after about 8000 seconds, while \textit{TSPSolver} is able to find one straight away. On the other hand, with the increase of the search space magnitude we can see that the solution found by the genetic algorithm seems to be more distant from the optimal one, that is instead asymptotically approached by the OPL solver, which reported an estimated gap of $1.89\%$ with the optimal solution.
+
+
+
+\section{Conclusions}
+This project has been interesting for many reasons: the choice between exact methods and heuristics allows the flexibility of optimizing towards different goals. If one prefers a non optimal solution, but with high speed of implementation and results, heurisitics are a good quick and dirty solution, even if they come with the burden of parameters optimization. The disatvantage though, is that they don't present guarantees of convergence. For this reason in performance critic applications one may prefer to restore to an exact solver, that, even if sometimes in a longer time, converges to the optimum, or is at least able to estimate the gap with respect to it. \\
+Overall, I have been able to get acquainted with many tools for combinatorial optimization, and feel confident that in the future I will be able to have a good grip on many problems of this type, thanks to the methods learnt during this course, both on a model and on a solution perspective.
 
 
 
