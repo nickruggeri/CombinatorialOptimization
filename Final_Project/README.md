@@ -18,4 +18,4 @@ solver
 
 The **Homework2** folder contains the genetic algorithm in *TSPSolver*, the script for running the entire experiment (
 complete of automatic parameters selection, repeated experiments and saving of experiments) and the experiments' 
-results.
+results. It also includes a tester that I used for the TSPSolver class
