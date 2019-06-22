@@ -6,6 +6,7 @@ import numpy as np
 
 from Final_Project.Homework2.TSPSolver import TSPSolver
 
+'''
 # set seed for reproducibility
 random.seed(48)
 np.random.seed(48)
@@ -84,10 +85,14 @@ for i in range(1, 6):
     with open('100_nodes_experiment_results/solver_{}.pkl'.format(i), 'wb') as file:
         pkl.dump(solver, file)
 
-
+'''
 # ------------------------------------------------------------------------------------------------
 # 200 nodes experiment
 # ------------------------------------------------------------------------------------------------
+# set seed for reproducibility
+random.seed(48)
+np.random.seed(48)
+
 print('\n\nStarting 200 nodes experiment...')
 with open('dist_mat_200.pkl', 'rb') as file:
     dist_mat = pkl.load(file)
@@ -118,6 +123,7 @@ solver.solve(dist_mat)
 print('Best solution found wit fitness', solver.best_fitness)
 with open('200_nodes_experiment_results/solver_1.pkl', 'wb') as file:
     pkl.dump(solver, file)
+
 
 
 

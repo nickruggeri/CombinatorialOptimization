@@ -4,7 +4,9 @@
 \BOOKMARK [2][-]{subsection.2.2}{Experimental Data}{section.2}% 4
 \BOOKMARK [1][-]{section.3}{The Genetic Algorithm}{}% 5
 \BOOKMARK [2][-]{subsection.3.1}{Implementation Details}{section.3}% 6
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Funcionalities}{subsection.3.1}% 7
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Functionalities}{subsection.3.1}% 7
 \BOOKMARK [3][-]{subsubsection.3.1.2}{Technical Details}{subsection.3.1}% 8
 \BOOKMARK [2][-]{subsection.3.2}{Implementation Challenges}{section.3}% 9
 \BOOKMARK [1][-]{section.4}{Experiments}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Parameters Selection}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Results}{section.4}% 12

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.13)  21 JUN 2019 14:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.13)  22 JUN 2019 08:27
 entering extended mode
 **./final_report.tex
 (final_report.tex
@@ -255,35 +255,55 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
+("C:\Program Files\MiKTeX 2.9\tex/latex/booktabs\booktabs.sty"
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen122
+\lightrulewidth=\dimen123
+\cmidrulewidth=\dimen124
+\belowrulesep=\dimen125
+\belowbottomsep=\dimen126
+\aboverulesep=\dimen127
+\abovetopsep=\dimen128
+\cmidrulesep=\dimen129
+\cmidrulekern=\dimen130
+\defaultaddspace=\dimen131
+\@cmidla=\count118
+\@cmidlb=\count119
+\@aboverulesep=\dimen132
+\@belowrulesep=\dimen133
+\@thisruleclass=\count120
+\@lastruleclass=\count121
+\@thisrulewidth=\dimen134
+)
 (final_report.aux)
 \openout1 = `final_report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring ON on input line 27.
+Package hyperref Info: Link coloring ON on input line 29.
  ("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  ("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count118
+\c@section@level=\count122
 )
-LaTeX Info: Redefining \ref on input line 27.
-LaTeX Info: Redefining \pageref on input line 27.
-LaTeX Info: Redefining \nameref on input line 27.
+LaTeX Info: Redefining \ref on input line 29.
+LaTeX Info: Redefining \pageref on input line 29.
+LaTeX Info: Redefining \nameref on input line 29.
 
 (final_report.out) (final_report.out)
 \@outlinefile=\write3
@@ -292,16 +312,16 @@ LaTeX Info: Redefining \nameref on input line 27.
 
 ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count119
-\scratchdimen=\dimen122
+\scratchcounter=\count123
+\scratchdimen=\dimen135
 \scratchbox=\box32
-\nofMPsegments=\count120
-\nofMParguments=\count121
+\nofMPsegments=\count124
+\nofMParguments=\count125
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count122
-\MPscratchDim=\dimen123
-\MPnumerator=\count123
-\makeMPintoPDFobject=\count124
+\MPscratchCnt=\count126
+\MPscratchDim=\dimen136
+\MPnumerator=\count127
+\makeMPintoPDFobject=\count128
 \everyMPtoPDFconversion=\toks22
 ) ("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -316,163 +336,141 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\c@lstlisting=\count125
-Package color Info: Redefining color red on input line 32.
-Package color Info: Redefining color green on input line 33.
+\c@lstlisting=\count129
+Package color Info: Redefining color red on input line 34.
+Package color Info: Redefining color green on input line 35.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/listings\lstlang1.sty"
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 48.
+LaTeX Font Info:    Try loading font information for U+msa on input line 50.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 48.
+LaTeX Font Info:    Try loading font information for U+msb on input line 50.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 54.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 56.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 54.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
  [1
 
 {C:/Users/ASUS/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<pics/electric_frame.png, id=66, 329.43076pt x 177.0615pt>
+<pics/electric_frame.png, id=74, 329.43076pt x 177.0615pt>
 File: pics/electric_frame.png Graphic file (type png)
 <use pics/electric_frame.png>
-Package pdftex.def Info: pics/electric_frame.png  used on input line 80.
+Package pdftex.def Info: pics/electric_frame.png  used on input line 82.
 (pdftex.def)             Requested size: 172.5pt x 92.7155pt.
  [2] [3 <./pics/electric_frame.png>] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 120--123
+Underfull \hbox (badness 10000) in paragraph at lines 122--125
 
  []
 
 [5]
-<pics/experimental_data_20.png, id=118, 462.528pt x 346.896pt>
+<pics/experimental_data_20.png, id=126, 462.528pt x 346.896pt>
 File: pics/experimental_data_20.png Graphic file (type png)
 <use pics/experimental_data_20.png>
-Package pdftex.def Info: pics/experimental_data_20.png  used on input line 150.
+Package pdftex.def Info: pics/experimental_data_20.png  used on input line 152.
 
 (pdftex.def)             Requested size: 103.50105pt x 77.62477pt.
-<pics/experimental_data_100.png, id=119, 462.528pt x 346.896pt>
+<pics/experimental_data_100.png, id=127, 462.528pt x 346.896pt>
 File: pics/experimental_data_100.png Graphic file (type png)
 <use pics/experimental_data_100.png>
-Package pdftex.def Info: pics/experimental_data_100.png  used on input line 151
+Package pdftex.def Info: pics/experimental_data_100.png  used on input line 153
 .
 (pdftex.def)             Requested size: 103.50105pt x 77.62477pt.
-<pics/experimental_data_200.png, id=120, 462.528pt x 346.896pt>
+<pics/experimental_data_200.png, id=128, 462.528pt x 346.896pt>
 File: pics/experimental_data_200.png Graphic file (type png)
 <use pics/experimental_data_200.png>
-Package pdftex.def Info: pics/experimental_data_200.png  used on input line 152
+Package pdftex.def Info: pics/experimental_data_200.png  used on input line 154
 .
 (pdftex.def)             Requested size: 103.50105pt x 77.62477pt.
-<pics/20_nodes_results.png, id=123, 462.528pt x 346.896pt>
-File: pics/20_nodes_results.png Graphic file (type png)
-<use pics/20_nodes_results.png>
-Package pdftex.def Info: pics/20_nodes_results.png  used on input line 164.
-(pdftex.def)             Requested size: 137.9979pt x 103.49792pt.
-<pics/100_nodes_results.png, id=124, 462.528pt x 346.896pt>
-File: pics/100_nodes_results.png Graphic file (type png)
-<use pics/100_nodes_results.png>
-Package pdftex.def Info: pics/100_nodes_results.png  used on input line 165.
-(pdftex.def)             Requested size: 137.9979pt x 103.49792pt.
-LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 177.
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--182
-
- []
-
-
-Overfull \hbox (46.23856pt too wide) in paragraph at lines 170--182
-\OT1/cmr/m/it/10 TSPSolver( init[]size=100, init[]type='best2opt', init[]best2o
-pt[]frac=0.2, fit-ness='total[]cost',
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 170--182
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
 
  []
 
 [6 <./pics/experimental_data_20.png> <./pics/experimental_data_100.png> <./pics
 /experimental_data_200.png>]
-Overfull \hbox (51.34964pt too wide) in paragraph at lines 185--195
-\OT1/cmr/m/it/10 TSPSolver( init[]size=5000, init[]type='best2opt', init[]best2
-opt[]frac=0.2, fit-ness='total[]cost',
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--195
+Underfull \hbox (badness 10000) in paragraph at lines 161--173
 
  []
 
-<pics/200_nodes_results.png, id=138, 462.528pt x 346.896pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--173
+
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 174.
+
+<pics/20_nodes_results.png, id=142, 462.528pt x 346.896pt>
+File: pics/20_nodes_results.png Graphic file (type png)
+<use pics/20_nodes_results.png>
+Package pdftex.def Info: pics/20_nodes_results.png  used on input line 199.
+(pdftex.def)             Requested size: 137.9979pt x 103.49792pt.
+<pics/100_nodes_results.png, id=143, 462.528pt x 346.896pt>
+File: pics/100_nodes_results.png Graphic file (type png)
+<use pics/100_nodes_results.png>
+Package pdftex.def Info: pics/100_nodes_results.png  used on input line 200.
+(pdftex.def)             Requested size: 137.9979pt x 103.49792pt.
+[7]
+<pics/200_nodes_results.png, id=155, 462.528pt x 346.896pt>
 File: pics/200_nodes_results.png Graphic file (type png)
 <use pics/200_nodes_results.png>
-Package pdftex.def Info: pics/200_nodes_results.png  used on input line 201.
-(pdftex.def)             Requested size: 172.5pt x 129.37639pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 206--219
-
- []
-
-
-Overfull \hbox (51.34964pt too wide) in paragraph at lines 206--219
-\OT1/cmr/m/it/10 TSPSolver( init[]size=2000, init[]type='best2opt', init[]best2
-opt[]frac=0.2, fit-ness='total[]cost',
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 206--219
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 206--219
-
- []
-
-[7 <./pics/20_nodes_results.png> <./pics/100_nodes_results.png>]
-(final_report.bbl [8 <./pics/200_nodes_results.png>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 226.
- [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 226.
+Package pdftex.def Info: pics/200_nodes_results.png  used on input line 218.
+(pdftex.def)             Requested size: 207.0021pt x 155.25484pt.
+ [8 <./pics/20_nodes_results.png> <./pics/100_nodes_results.png>]
+(final_report.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 232.
+ [9 <./pics/200_nodes_results.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 232.
  (final_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 226.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 226.
-Package rerunfilecheck Info: File `final_report.out' has not changed.
-(rerunfilecheck)             Checksum: DD5C8A9E9AA31D852217D82DDF5AE783;654.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 226.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 232.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 232.
+
+
+Package rerunfilecheck Warning: File `final_report.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `final_report.out':
+(rerunfilecheck)             Before: 8F3D3C8B6A23E7AE755049FD81DBB4F4;783
+(rerunfilecheck)             After:  985BB110A6E3D4BF877812D24716C6DB;784.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 232.
  ) 
 Here is how much of TeX's memory you used:
- 7628 strings out of 492945
- 108558 string characters out of 3135516
- 390179 words of memory out of 3000000
- 11400 multiletter control sequences out of 15000+200000
- 12184 words of font info for 48 fonts, out of 3000000 for 9000
+ 7690 strings out of 492945
+ 109380 string characters out of 3135516
+ 391191 words of memory out of 3000000
+ 11454 multiletter control sequences out of 15000+200000
+ 12543 words of font info for 49 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,7n,40p,907b,1247s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,15n,40p,907b,1247s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on final_report.pdf (9 pages, 717303 bytes).
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on final_report.pdf (9 pages, 730708 bytes).
 PDF statistics:
- 215 PDF objects out of 1000 (max. 8388607)
- 47 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 230 PDF objects out of 1000 (max. 8388607)
+ 50 named destinations out of 1000 (max. 500000)
+ 132 words of extra memory for PDF output out of 10000 (max. 10000000)
 

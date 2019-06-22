@@ -21,6 +21,8 @@
 \usepackage[procnames]{listings}
 \usepackage{color}
 
+\usepackage{booktabs}
+
 
 
 
@@ -88,7 +90,7 @@ After the use of the OPL model for homework 1, we decided to implement a heurist
 Details about the implementation are included in the following section.
 
 \subsection{Implementation Details}
-\subsubsection{Funcionalities}
+\subsubsection{Functionalities}
 The genetic algorithm represents solutions to the TSP problem using the path representation. This means that a solution is a permutation of $\{0, \ldots, n-1\}$ where the nodes are listed in order of visit. The only neighbourhood considered is the standard 2-opt neighbourhood. \\
 The following options have been made available in the implementation (see code attached for further details, it has been made as clear and documented as possible):
 \begin{itemize}
@@ -154,6 +156,39 @@ As requested for the homework, here we present a comparison of the performances 
     \label{fig:datasets}
 \end{figure}
 
+\subsection{Parameters Selection}
+For everyone of the datasets studied, we first need to run a parameter optimization procedure on the genetic algorithm. The way we chose to do so is to try to solve the specific problem instance on a grid of possible parameters, and then keep the best setting for the experiments. The only difference between the actual experiments and the parameters selection phase is the stopping criterion: to allow for fast exploration of the parameters grid we set a early stopping criterion with respect to the final experiment. Settings for the grid search, including the more strict stopping criteria and the best settings found, are included in table \ref{tab: parameters selection}. \\ \newpage
+For all other parameters the default value is used, namely: \\
+\newline
+\textit{
+TSPSolver( \\
+\textbf{init\_size}=CUSTOM, \textbf{init\_type}='best2opt', \textbf{init\_best2opt\_frac}=0.2, \\
+\textbf{fitness}='total\_cost', \textbf{selection='montecarlo'}, \textbf{mating}='tuples', \\
+\textbf{mating\_n}=CUSTOM, \textbf{crossover}='OX', \textbf{mutation\_prob}=CUSTOM,\\
+\textbf{gen\_replacement}='keep\_best', \textbf{gen\_replacement\_par}=CUSTOM, \\
+\textbf{stopping}=CUSTOM \\
+)
+}
+\newline
+
+\begin{table}[]
+\addtolength{\leftskip} {-2cm} % increase (absolute) value if needed
+\addtolength{\rightskip}{-2cm}
+\begin{tabular}{@{}llll@{}}
+                                                                                         & 20 nodes                                                                                           & 100 nodes                                                                                          & 200 nodes                                                                                            \\ \cmidrule(l){2-4} 
+\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}mating\_n \\ (= init\_size)\end{tabular}} & \multicolumn{1}{l|}{50, 100, 150}                                                                  & \multicolumn{1}{l|}{500, 1000, 1500}                                                               & \multicolumn{1}{l|}{2000, 5000, 8000}                                                                \\ \cmidrule(l){2-4} 
+\multicolumn{1}{l|}{mutation\_prob}                                                      & \multicolumn{1}{l|}{0.2, 0.4, 0.6}                                                                 & \multicolumn{1}{l|}{0.2, 0.4, 0.6}                                                                 & \multicolumn{1}{l|}{0.2, 0.4, 0.6}                                                                   \\ \cmidrule(l){2-4} 
+\multicolumn{1}{l|}{generation size}                                                     & \multicolumn{1}{l|}{50, 100, 150}                                                                  & \multicolumn{1}{l|}{500, 1000, 1500}                                                               & \multicolumn{1}{l|}{2000, 5000, 8000}                                                                \\ \cmidrule(l){2-4} 
+\multicolumn{1}{l|}{stopping criteria}                                                   & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}time: 100\\ not\_improving\_gen: 1000\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}time: 100\\ not\_improving\_gen: 1000\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}time: 1000\\ not\_improving\_gen: 10000\end{tabular}} \\ \cmidrule(l){2-4} 
+\multicolumn{1}{l|}{best setting}                                                        & \multicolumn{1}{l|}{150, 0.6, 150}                                                                 & \multicolumn{1}{l|}{1500, 0.6, 1500}                                                               & \multicolumn{1}{l|}{8000, 0.6, 8000}                                                                \\ \cmidrule(l){2-4} 
+\end{tabular}
+\caption{grid search and relative stopping criteria for the genetic algorithm on the three datasets of size 20, 100 and 200 nodes. The best setting found includes the values of the parameters, in order mating\_n (and init\_size equal), mutation probability and generation size}
+\label{tab: parameters selection}
+\end{table}
+
+As a side note, we would like to highlight the fact that bayesian optimization techniques could be applied as this problem is suited for extensive hyperparameter tuning (for a review about bayesian optimization, see for example \cite{shahriari2015taking}).
+
+\subsection{Results}
 For evaluation, we run the exact solver and the genetic algorithm 5 times each on each of the first two datasets. We just run once on the third one, allowing a longer time limit. This procedure is justified by the fact that the variability in the results from the first two datasets is low enough to show that results are consistent throughout experiments. Consequently we show confidence intervals only in figure \ref{fig:20and100points}, and only for the genetic algorithm, since the exact solver has almost zero variance. \\
 Moreover, even if only with 200 points, the OPL solver requires more or less two hours to only find a feasible solution (see figure \ref{fig:200points}), making repeated experiments very time consuming. We comment the results separately in the following sections.
 
@@ -167,29 +202,11 @@ Moreover, even if only with 200 points, the OPL solver requires more or less two
 \label{fig:20and100points}
 \end{figure}
 
-The genetic algorithm solver has been trained using the following parameters: \\
-\newline
-\textit{TSPSolver(
-        init\_size=100, init\_type='best2opt', init\_best2opt\_frac=0.2, fitness='total\_cost',
-        selection='montecarlo', mating='tuples', mating\_n=100, crossover='OX', mutation\_prob=0.2,
-        gen\_replacement='keep\_best', gen\_replacement\_par=100,
-        stopping=\{'time': 1000, 'not\_improving\_gen': 1000\}
-    )} \\
-\newline
-where the important points are: the use of a random $0.2$ probability best-2opt improvement at initialization, initial population 100 individuals, 100 matings at every generation, $0.2$ probability of mutation and fixed population size keeping the 100 best elements (see documentation or help from \textit{TSPSolver.\_\_init\_\_}). \\
+
 Results are presented in figure \ref{fig:20and100points} (left).
 For this small instance the exact solution is reached in a short time from the OPL solver. It is interesting to see that also the genetic algorithm succedes in finding the optimal solution, and at every moment in time it holds a better score. This trend is not really significant though, as the small instance of the problem doesn't allow to see the expected behaviour, which is instead highlighted in the following results. 
 
 \paragraph*{100 nodes dataset}
-
-The genetic algorithm solver has been trained using the following parameters: \\
-\textit{TSPSolver(
-        init\_size=5000, init\_type='best2opt', init\_best2opt\_frac=0.2, fitness='total\_cost',
-        selection='montecarlo', mating='tuples', mating\_n=5000, crossover='OX', mutation\_prob=0.2,
-        gen\_replacement='keep\_best', gen\_replacement\_par=5000,
-        stopping={'time': 1000, 'not\_improving\_gen': $+\infty$}
-    )} \\
-\newline
 To allow for a fair comparison between the two methods, the same time constraint of 1000 seconds has been applied. As we can see, the size of the population, both at initialization and during evolution, has been increased to comply with the bigger problem size. \\
 Results are presented in figure \ref{fig:20and100points} (right, notice the log-scale). Even though the OPL solver seems to find a solution on the spot, it then doesn't improve for a very long time. The genetic algorithm instead finds a very good solution in a very short time, which is overcome only after the exact solver approaches (and eventually reaches) the optimal solution.
 
@@ -198,29 +215,18 @@ Results are presented in figure \ref{fig:20and100points} (right, notice the log-
 
 \begin{figure}
     \centering
-\includegraphics[width=0.5\textwidth]{pics/200_nodes_results.png}
+\includegraphics[width=0.6\textwidth]{pics/200_nodes_results.png}
 \caption{result of the experiment (single run) on the 200 points dataset}
 \label{fig:200points}
 \end{figure}
 
-The genetic algorithm solver has been trained using the following parameters: \\
-\newline
-\textit{TSPSolver(
-    init\_size=2000, init\_type='best2opt', init\_best2opt\_frac=0.2, fitness='total\_cost',
-    selection='montecarlo', mating='tuples', mating\_n=2000, crossover='OX', mutation\_prob=0.2,
-    gen\_replacement='keep\_best', gen\_replacement\_par=2000,
-    stopping={'time': 10000, 'not\_improving\_gen': $+\infty$}
-)} \\
-\newline
 Again, both methods have been restricted with the same stopping criterion, in this case 10000 seconds of solution time. Here the optimal solution hasn't been found by the exact solver within the time constraints, and is therefore not available. \\
-Results are presented in figure \ref{fig:200points}. We confirm the trend from the previous experiment, where the exact solver finds a better solution of the genetic algorithm only after a long time. Even more, it is able to find a feasible solution only after about 7500 seconds, while TSPSolver is able to find one straight away (indeed, it is already provided with a population of feasible solutions at initialization time). On the other hand, with the increase of the search space magnitude we can see that the solution found by the genetic algorithm seems to be more distant from the optimal one, that is instead asymptotically approached by the OPL solver. In fact, the reported estimated gap between the solution at time 10000 and the optimal results is $1.89\%$ \\
-\newline
-As a final remark, we maybe need to highlight the fact that the genetic algorithm has not undergone extensive parameter optimization, both for reasons of time and because results were satisfying enough using "reasonable" choices. However, bayesian optimization techniques could be applied as the problem is suited for extensive hyperparameter tuning (for a review about bayesian optimization, see for example \cite{shahriari2015taking}).
+Results are presented in figure \ref{fig:200points}. We confirm the trend from the previous experiment, where the exact solver finds a better solution of the genetic algorithm only after a long time. Even more, it is able to find a feasible solution only after about 7500 seconds, while TSPSolver is able to find one straight away (indeed, it is already provided with a population of feasible solutions at initialization time). On the other hand, with the increase of the search space magnitude we can see that the solution found by the genetic algorithm seems to be more distant from the optimal one, that is instead asymptotically approached by the OPL solver. In fact, the reported estimated gap between the solution at time 10000 and the optimal results is $1.89\%$ 
 
 
 
 
-
+\newpage
 \bibliographystyle{ieeetr}
 \bibliography{bibliography}
 \end{document}

@@ -2,7 +2,7 @@ import _pickle as pkl
 from Final_Project.Homework2.TSPSolver import TSPSolver
 
 
-data_path = 'dist_mat_try.pkl'
+data_path = 'dist_mat_100.pkl'
 with open(data_path, 'rb') as file:
     dist_mat = pkl.load(file)
 
