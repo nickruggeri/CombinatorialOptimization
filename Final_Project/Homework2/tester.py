@@ -20,7 +20,7 @@ for init_type in ['random', 'best2opt']:
                         'mating': mating,
                         'crossover': crossover,
                         'gen_replacement': gen_replacement,
-                        'stopping': {'time': 2}
+                        'stopping': {'time': 1}
                     }
                     print('\n', parameters)
                     solver = TSPSolver(**parameters)

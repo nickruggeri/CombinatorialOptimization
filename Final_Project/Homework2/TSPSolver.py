@@ -262,10 +262,11 @@ class TSPSolver:
         elif self.selection == 'linear_ranking':
             # recall that generations are sorted by fitness, so that the ranks are already (k, k-1, ... ,2,1)
             m = len(self._current_generation)
-            assert sum(2 * np.arange(m, 0, -1) / ((m + 1) * m)) == 1
+            binomial_m_2 = m * (m + 1) / 2
+            p = np.arange(m, 0, -1) / binomial_m_2
             return list(np.random.choice(
                     len(self._current_generation), n,
-                    p=2 * np.arange(m, 0, -1) / ((m + 1) * m)
+                    p=p
                     ))
         elif self.selection == 'n_tournament':
             # recall that generations are sorted by fitness, so that if we select some indices at random, the minimum
