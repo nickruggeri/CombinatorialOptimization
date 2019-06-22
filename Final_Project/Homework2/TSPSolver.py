@@ -9,8 +9,8 @@ class TSPSolver:
     """ TSP solver using genetic algorithms """
 
     def __init__(self, init_size=100, init_type='random', init_best2opt_frac=0.2, fitness='total_cost',
-                 selection='montecarlo', mating='tuples', mating_n=10, crossover='OX', mutation_prob=0.3,
-                 gen_replacement='keep_best', gen_replacement_par=10,
+                 selection='montecarlo', n_tournament_frac=None,  mating='tuples', mating_n=10, crossover='OX',
+                 mutation_prob=0.3, gen_replacement='keep_best', gen_replacement_par=10,
                  stopping={'time': math.inf, 'not_improving_gen': 1000}, use_logger=True):
         """
         INPUTS:
@@ -26,6 +26,11 @@ class TSPSolver:
                     'montecarlo'
                     'linear_ranking'
                     'n_tournament'
+            - n_tournament_frac: None or float in (0,1]. Used only if selection = 'n_tournament'. It is the fraction of
+              the current generation to select at random for selecting the best individual. Therefore for the new
+              generation repeat the following for the required number of steps: select a fraction n_tournament_frac of
+              the current generation at random, and pick the best individual.
+              If None, defaults to 0.2
             -mating: the way to choose the couples to execute crossover. Accepted values are:
                     'tuples' select a number of tuples, specified by mating_n
                     'mating_pool' select a mating pool of mating_n and crossover among all possible couples
@@ -68,6 +73,7 @@ class TSPSolver:
         self.init_best2opt_frac = init_best2opt_frac
         self.fitness = fitness
         self.selection = selection
+        self.n_tournament_frac = n_tournament_frac if n_tournament_frac is not None else 0.2
         self.mating = mating
         self.mating_n = mating_n
         self.crossover = crossover
@@ -271,7 +277,13 @@ class TSPSolver:
         elif self.selection == 'n_tournament':
             # recall that generations are sorted by fitness, so that if we select some indices at random, the minimum
             # one is already the index of the fittest individual
-            return [min(np.random.choice(len(self._current_generation))) for _ in range(n)]
+            return [
+                min(
+                    np.random.choice(len(self._current_generation),
+                                     size=int(self.n_tournament_frac * len(self._current_generation)))
+                )
+                for _ in range(n)
+            ]
 
     def _mating_and_mutation(self, sel):
         """
