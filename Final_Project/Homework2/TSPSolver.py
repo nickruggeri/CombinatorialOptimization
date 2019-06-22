@@ -287,7 +287,7 @@ class TSPSolver:
                 for j in range(i+1, len(sel))
                 for ind in self._crossover(sel[i], sel[j])
             ]
-        #assert all(ind.shape[0]==self.problem_size for ind in next_gen)
+        assert all(ind.shape[0]==self.problem_size for ind in next_gen)
         return [self._mutate_individual(ind) for ind in next_gen]
 
     def _crossover(self, ind1, ind2):
@@ -303,7 +303,7 @@ class TSPSolver:
 
         if self.crossover == 'PMX':
             # random cut points
-            c1 = random.randint(self.problem_size-1)
+            c1 = random.randint(0, self.problem_size-1)
             c2 = random.randint(c1+1, self.problem_size)
 
             off1[c1:c2] = ind2[c1:c2]
@@ -312,30 +312,28 @@ class TSPSolver:
             elements2 = set(ind1[c1:c2])
 
             # build offspring1
-            sub_rule = {
-                **{ind1[i]: ind2[i] for i in range(c1, c2)},
-                **{ind2[i]: ind1[i] for i in range(c1, c2)}
-                }
+            sub_rule_1 = {ind2[i]: ind1[i] for i in range(c1, c2)}
             for i, x in enumerate(ind1[:c1]):
                 curr = x
                 while curr in elements1:
-                    curr = sub_rule[curr]
+                    curr = sub_rule_1[curr]
                 off1[i] = curr
             for i, x in enumerate(ind1[c2:]):
                 curr = x
                 while curr in elements1:
-                    curr = sub_rule[curr]
+                    curr = sub_rule_1[curr]
                 off1[i+c2] = curr
             # build offspring2
+            sub_rule_2 = {ind1[i]: ind2[i] for i in range(c1, c2)}
             for i, x in enumerate(ind2[:c1]):
                 curr = x
                 while curr in elements2:
-                    curr = sub_rule[curr]
+                    curr = sub_rule_2[curr]
                 off2[i] = curr
             for i, x in enumerate(ind2[c2:]):
                 curr = x
                 while curr in elements2:
-                    curr = sub_rule[curr]
+                    curr = sub_rule_2[curr]
                 off2[i+c2] = curr
 
         elif self.crossover == 'CX':
@@ -365,7 +363,7 @@ class TSPSolver:
                                                        if x not in elements1]
             off2[np.r_[c2:self.problem_size, 0:c1]] = [x for x in ind1[np.r_[c2:self.problem_size, 0:c2]]
                                                        if x not in elements2]
-            #assert off1.shape[0]==off2.shape[0]==self.problem_size
+            assert off1.shape[0]==off2.shape[0]==self.problem_size
         elif self.crossover == 'LOX':
             # random cut points
             c1 = random.randint(self.problem_size-1)
@@ -416,7 +414,7 @@ class TSPSolver:
                 elements.add(new_node)
                 i += 1
             return [off1]        # to comply with returned object type of other crossover types, return a list
-        #assert off1.shape[0] == off2.shape[0] ==self.problem_size
+        assert off1.shape[0] == off2.shape[0] ==self.problem_size
         return off1, off2
 
     def _mutate_individual(self, ind):
@@ -426,7 +424,7 @@ class TSPSolver:
             c1 = random.randint(0, self.problem_size-1)
             c2 = random.randint(c1+1, self.problem_size)
             mutated_ind = ind[np.r_[0:c1, c2-1:c1-1:-1, c2:self.problem_size]]
-            #assert len(mutated_ind) == len(set(mutated_ind))
+            assert len(mutated_ind) == len(set(mutated_ind))
             return mutated_ind
         return ind
 

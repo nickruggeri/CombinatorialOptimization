@@ -2,13 +2,28 @@ import _pickle as pkl
 from Final_Project.Homework2.TSPSolver import TSPSolver
 
 
-data_path = 'dist_mat_100.pkl'
+# load small data matrix for running the solver
+data_path = 'dist_mat_20.pkl'
 with open(data_path, 'rb') as file:
     dist_mat = pkl.load(file)
 
-solver = TSPSolver()
-solver.solve(dist_mat)
 
-print('best solution found with cost', solver.best_fitness, 'in', solver.solution_time, 'seconds')
-print('logger keys', solver.logger.keys())
-print('solution at time 1, 5, 15, 30', solver.solution_at_time(1)[1], solver.solution_at_time(5)[1], solver.solution_at_time(15)[1], solver.solution_at_time(30)[1])
+# try all combinations of parameters
+for init_type in ['random', 'best2opt']:
+    for selection in ['montecarlo', 'linear_ranking', 'n_tournament']:
+        for mating in ['tuples', 'mating_pool']:
+            for crossover in ['PMX', 'CX', 'OX', 'LOX', 'SCX']:
+                for gen_replacement in ['keep_best', 'remove_worst']:
+                    parameters = {
+                        'init_type': init_type,
+                        'selection': selection,
+                        'mating': mating,
+                        'crossover': crossover,
+                        'gen_replacement': gen_replacement,
+                        'stopping': {'time': 10}
+                    }
+                    print('\n', parameters)
+                    solver = TSPSolver(**parameters)
+                    solver.solve(dist_mat)
+
+                    print('best solution found with cost', solver.best_fitness, 'in', solver.solution_time, 'seconds')
