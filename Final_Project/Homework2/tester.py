@@ -1,5 +1,5 @@
 import _pickle as pkl
-from Final_Project.Homework2.TSPSolver import TSPSolver
+from FinalProject.Homework2.TSPSolver import TSPSolver
 
 
 # load small data matrix for running the solver

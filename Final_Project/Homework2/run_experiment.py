@@ -4,7 +4,7 @@ import random
 
 import numpy as np
 
-from Final_Project.Homework2.TSPSolver import TSPSolver
+from FinalProject.Homework2.TSPSolver import TSPSolver
 
 '''
 # set seed for reproducibility
