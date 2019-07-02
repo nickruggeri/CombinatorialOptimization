@@ -3,7 +3,7 @@
 The travelling salesman problem here is represented by some points on the [0, 1] x [0, 1] square. The main repository 
 contains:
 
-- **data_generator.py**: all the utility functions to reproduce thea actual data used in the experiments. Seed is
+- **data_generator.py**: all the utility functions to reproduce the actual data used in the experiments. Seed is
  provided for reproducibility. This script saves the datasets provided in three locations: in experimental_data it saves
  the .pkl files of the raw arrays, in Homework1 it saves the distance matrix in .dat format ready for the OPL models and 
  in Homework2 it saves another .pkl file with the same distance matrix read for the genetic algorithm
