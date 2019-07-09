@@ -6,7 +6,7 @@ import numpy as np
 
 from FinalProject.Homework2.TSPSolver import TSPSolver
 
-'''
+
 # set seed for reproducibility
 random.seed(48)
 np.random.seed(48)
@@ -85,7 +85,6 @@ for i in range(1, 6):
     with open('100_nodes_experiment_results/solver_{}.pkl'.format(i), 'wb') as file:
         pkl.dump(solver, file)
 
-'''
 # ------------------------------------------------------------------------------------------------
 # 200 nodes experiment
 # ------------------------------------------------------------------------------------------------

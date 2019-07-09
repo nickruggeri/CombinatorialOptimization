@@ -104,7 +104,7 @@ class TSPSolver:
 
     def solve(self, cost_matrix):
         """
-        Given the numpy array of the costs, with shape [n,n], solve the problem.
+        Given the numpy array of the costs, with shape [n, n], solve the problem.
         Returns the best solution found and its fitness value
         """
         if cost_matrix.shape[0] != cost_matrix.shape[1]:
@@ -189,11 +189,11 @@ class TSPSolver:
         If either of the two is missing, then the whole fitness function is computed.
         INPUT:
             - individual: numpy array, permutation of range(0, self.problem_size)
-            - split_indices: tuple (c1, c2) with c1,c 2 indices of the cuts between the 2-opt neighbours.
+            - split_indices: tuple (c1, c2) with c1, c2 indices of the cuts between the 2-opt neighbours.
               Cuts are the index of the element of their right in the array. For example a cut
               in an array like [elem_0, elem_1 ||| elem_2, elem_3, ..., elem_j ||| elem_j+1, ...]
-              is (c1, c2) = (2, j+1). Consequently, since node 0 has to stay the first element, c1 and c2 have
-              to be between 1 and self.problem_size (extremes included)
+              is (c1, c2) = (2, j+1).
+              Consequently c1 and c2 have to be between 0 and self.problem_size (extremes included)
             - prev_score: the fitness score of the previous individual, to be modified iteratively
         """
         if self.fitness == 'total_cost':
@@ -270,10 +270,13 @@ class TSPSolver:
             m = len(self._current_generation)
             binomial_m_2 = m * (m + 1) / 2
             p = np.arange(m, 0, -1) / binomial_m_2
-            return list(np.random.choice(
-                    len(self._current_generation), n,
+            return list(
+                np.random.choice(
+                    len(self._current_generation),
+                    n,
                     p=p
-                    ))
+                )
+            )
         elif self.selection == 'n_tournament':
             # recall that generations are sorted by fitness, so that if we select some indices at random, the minimum
             # one is already the index of the fittest individual
