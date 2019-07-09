@@ -148,7 +148,11 @@ class TSPSolver:
                     best_neigh_idx = max(range(len(neighs)), key=lambda idx: self.fitness_evaluation(neighs[idx]))
                     self._current_generation[i] = neighs[best_neigh_idx]
         # compute fitnesses, sort, update best fitness and best individual
-        self._current_fitnesses = np.array([self.fitness_evaluation(individual) for individual in self._current_generation])
+        self._current_fitnesses = np.array(
+            [
+                self.fitness_evaluation(individual) for individual in self._current_generation
+            ]
+        )
 
         ordered_idx = sorted(
             range(len(self._current_generation)),
