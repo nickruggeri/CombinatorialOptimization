@@ -94,7 +94,7 @@ class TSPSolver:
         self.best_fitness = None
         self.best_individual = None
         self._current_generation = []
-        self._current_fitnesses = []
+        self._current_fitnesses = np.array([], dtype=np.float64)
         self.generations_count = 0
         self._starting_time = None
         self._not_improving_gen_count = 0
@@ -148,14 +148,14 @@ class TSPSolver:
                     best_neigh_idx = max(range(len(neighs)), key=lambda idx: self.fitness_evaluation(neighs[idx]))
                     self._current_generation[i] = neighs[best_neigh_idx]
         # compute fitnesses, sort, update best fitness and best individual
-        self._current_fitnesses = [self.fitness_evaluation(individual) for individual in self._current_generation]
+        self._current_fitnesses = np.array([self.fitness_evaluation(individual) for individual in self._current_generation])
 
         ordered_idx = sorted(
             range(len(self._current_generation)),
             key=lambda ind: self._current_fitnesses[ind]
         )
         self._current_generation = [self._current_generation[i] for i in ordered_idx]
-        self._current_fitnesses = [self._current_fitnesses[i] for i in ordered_idx]
+        self._current_fitnesses = np.array([self._current_fitnesses[i] for i in ordered_idx])
 
         self.best_individual = self._current_generation[0]
         self.best_fitness = self._current_fitnesses[0]
@@ -218,19 +218,19 @@ class TSPSolver:
 
         sel = self._select_individuals()
         next_gen = self._mating_and_mutation(sel)
-        next_fit = list(map(lambda x: self.fitness_evaluation(x), next_gen))
+        next_fit = np.array(list(map(lambda x: self.fitness_evaluation(x), next_gen)))
 
         # select individuals according to generational replacement policy
         old_new_gen = self._current_generation + next_gen
-        old_new_fit = self._current_fitnesses + next_fit
+        old_new_fit = np.hstack([self._current_fitnesses, next_fit])
 
         sorted_idx = sorted(range(len(old_new_fit)), key=lambda i: old_new_fit[i])
         if self.gen_replacement == 'keep_best':
             self._current_generation = [old_new_gen[i] for i in sorted_idx[:self.gen_replacement_par]]
-            self._current_fitnesses = [old_new_fit[i] for i in sorted_idx[:self.gen_replacement_par]]
+            self._current_fitnesses = np.array([old_new_fit[i] for i in sorted_idx[:self.gen_replacement_par]])
         elif self.gen_replacement == 'remove_worst':
             self._current_generation = [old_new_gen[i] for i in sorted_idx[:-self.gen_replacement_par]]
-            self._current_fitnesses = [old_new_fit[i] for i in sorted_idx[:-self.gen_replacement_par]]
+            self._current_fitnesses = np.array([old_new_fit[i] for i in sorted_idx[:-self.gen_replacement_par]])
 
         # if better solution is found, update the best individual and save to logger
         if self._current_fitnesses[0] < self.best_fitness:

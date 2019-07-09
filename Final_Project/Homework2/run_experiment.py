@@ -4,8 +4,7 @@ import random
 
 import numpy as np
 
-from FinalProject.Homework2.TSPSolver import TSPSolver
-
+from Final_Project.Homework2.TSPSolver import TSPSolver
 
 # set seed for reproducibility
 random.seed(48)
